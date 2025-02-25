@@ -1,43 +1,26 @@
-<section class='w-1/2'>
-    <!--
-  Heads up! 👋
+<div
+    class="flex items-center flex-col bg-gradient-to-b from-[#ffb5ab] via-[#fff] to-[#ffb5ab] md:w-fit mx-5 md:mx-auto py-5 px-5 rounded-md">
+    {{ $header }}
 
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
--->
-
-<div class="rounded-lg border border-gray-200 dark:border-gray-700">
-    <div class="overflow-x-auto rounded-t-lg">
-        <div class="flex items-center justify-end rounded-b-lg border-t border-gray-200 px-4 py-2 dark:border-gray-700">
-            {{$header}}
-        </div>
-      <table
-        class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900"
-      >
-        <thead class="ltr:text-left rtl:text-right">
-          <tr>
-            <th class="px-4 py-2 font-medium whitespace-nowrap text-gray-900 dark:text-white">
-              Nomor
-            </th>
-            <th class="px-4 py-2 font-medium whitespace-nowrap text-gray-900 dark:text-white">
-              Nama Kantor
-            </th>
-            <th class="px-4 py-2 font-medium whitespace-nowrap text-gray-900 dark:text-white">
-              Link Map
-            </th>
-            <th class="px-4 py-2 font-medium whitespace-nowrap text-gray-900 dark:text-white">
-              Foto
-            </th>
-          </tr>
+    <table class="border-separate border-spacing-2 border-spacing-x-0 text-left max-w-500 hidden md:block">
+        <thead>
+            <tr>
+                <td class="pr-3">No.</td>
+                <td class="pr-3">Nama Kantor</td>
+                <td class="pr-3">Link Map</td>
+                <td class="pr-3">Foto</td>
+            </tr>
         </thead>
 
-        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        {{$slot}}
+        <tbody>
+            {{ $slot }}
         </tbody>
-      </table>
-    </div>
-    <div class="flex items-center justify-between rounded-b-lg border-t border-gray-200 px-4 py-2 dark:border-gray-700">
-        {{$footer}}
+    </table>
+
+    <div class="flex flex-col md:flex-row items-center justify-between text-xs md:text-sm w-full pt-3">
+        {{ $footer }}
     </div>
 
-  </div>
-</section>
+</div>
+
+</div>

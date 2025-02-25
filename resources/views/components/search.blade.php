@@ -1,41 +1,22 @@
-<!--
-  Heads up! 👋
-
-  Plugins:
-    - @tailwindcss/forms
--->
-
-<div class="relative">
-    <label for="Search" class="sr-only"> Search for... </label>
-
+<div class="relative w-full mx-75">
+    <div class="absolute mt-1.5 ml-2.5">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="19"
+        height="19"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5a6.75 6.75 0 0 0 0-13.5M2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
     <input
       type="text"
-      id="Search"
-      placeholder="search"
-      class="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-xs sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white ps-2"
+      placeholder="Cari Data..."
+      class="bg-[#fff] py-1 rounded-full w-full pl-10 pr-3 mb-3"
     />
-
-    <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
-      <button
-        type="button"
-        class="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-      >
-        <span class="sr-only">Search</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-4"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-          />
-        </svg>
-      </button>
-    </span>
   </div>
