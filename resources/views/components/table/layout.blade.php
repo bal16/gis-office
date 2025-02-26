@@ -13,10 +13,12 @@
         </thead>
 
         <tbody>
-            {{ $slot }}
+            {{ $body }}
         </tbody>
     </table>
-
+    <div class="md:hidden text-left w-full">
+        {{ $slot }}
+    </div>
     <div class="flex flex-col md:flex-row items-center justify-between text-xs md:text-sm w-full pt-3">
         {{ $footer }}
     </div>
