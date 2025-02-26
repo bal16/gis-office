@@ -22,7 +22,4 @@
     <div class="flex flex-col md:flex-row items-center justify-between text-xs md:text-sm w-full pt-3">
         {{ $footer }}
     </div>
-
-</div>
-
 </div>

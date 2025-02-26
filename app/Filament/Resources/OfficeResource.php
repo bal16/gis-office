@@ -26,51 +26,46 @@ class OfficeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Tabs::make('')
-                    ->tabs([
-                        Forms\Components\Tabs\Tab::make('Office*')
-                            ->schema([
-                                Forms\Components\TextInput::make('name')
-                                        ->label('Office Name')
-                                        ->maxLength(25)
-                                        ->required(),
-                                Forms\Components\Select::make('is_district')
-                                        ->label('Office Of')
-                                        ->options([true => 'District', false => 'Village'])
-                                        ->required(),
-                                Forms\Components\Select::make('district_id')
-                                        ->required()
-                                        ->relationship('district', 'name')
-                                        ->label('District')
-                                        ->searchable()
-                                        ->required(),
-                                Forms\Components\FileUpload::make('image')
-                                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                                        ->disk('public')
-                                        ->directory('offices')
-                                        ->enableOpen()
-                                        ->imageResizeMode('cover')
-                                        ->imageResizeTargetWidth('1920')
-                                        ->imageResizeTargetHeight('1080')
-                                        ->imageEditor()
-                                        ->required(),
-                            ]),
-                        Forms\Components\Tabs\Tab::make('Location*')
-                            ->schema([
-                                // Embed the Livewire MapPicker component
-                                Forms\Components\Livewire::make(Livewire\MapPicker::class)
-                                    ->label('Select Location on Map')
-                                    ->columnSpanFull(),
-                                Forms\Components\TextInput::make('longitude')
-                                    ->numeric()
-                                    ->required(),
-                                Forms\Components\TextInput::make('latitude')
-                                    ->numeric()
-                                    ->required(),
-                            ]),
-                    ])
-                    ->columnSpanFull(),
-            ]);
+                Forms\Components\Section::make('Office*')
+                    ->schema([
+                        Forms\Components\TextInput::make('name')
+                                ->label('Office Name')
+                                ->maxLength(25)
+                                ->required(),
+                        Forms\Components\Select::make('is_district')
+                                ->label('Office Of')
+                                ->options([true => 'District', false => 'Village'])
+                                ->required(),
+                        Forms\Components\Select::make('district_id')
+                                ->required()
+                                ->relationship('district', 'name')
+                                ->label('District')
+                                ->searchable()
+                                ->required(),
+                        Forms\Components\FileUpload::make('image')
+                                ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                                ->disk('public')
+                                ->directory('offices')
+                                ->enableOpen()
+                                ->imageResizeMode('cover')
+                                ->imageResizeTargetWidth('1920')
+                                ->imageResizeTargetHeight('1080')
+                                ->imageEditor()
+                                ->required(),
+                    ]),
+                Forms\Components\Section::make('Location*')
+                    ->schema([
+                        Forms\Components\Livewire::make(Livewire\MapPicker::class)
+                            ->label('Select Location on Map')
+                            ->columnSpanFull(),
+                        Forms\Components\TextInput::make('longitude')
+                            ->numeric()
+                            ->required(),
+                        Forms\Components\TextInput::make('latitude')
+                            ->numeric()
+                            ->required(),
+                    ]),
+                ]);
     }
 
     public static function table(Table $table): Table
