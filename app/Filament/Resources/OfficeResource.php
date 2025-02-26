@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Livewire;
 use App\Filament\Resources\OfficeResource\Pages;
 use App\Filament\Resources\OfficeResource\RelationManagers;
 use App\Models\Office;
@@ -56,6 +57,10 @@ class OfficeResource extends Resource
                             ]),
                         Forms\Components\Tabs\Tab::make('Location*')
                             ->schema([
+                                // Embed the Livewire MapPicker component
+                                Forms\Components\Livewire::make(Livewire\MapPicker::class)
+                                    ->label('Select Location on Map')
+                                    ->columnSpanFull(),
                                 Forms\Components\TextInput::make('longitude')
                                     ->numeric()
                                     ->required(),
