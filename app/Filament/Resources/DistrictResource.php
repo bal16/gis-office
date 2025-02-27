@@ -32,18 +32,20 @@ class DistrictResource extends Resource
                                 ->required(),
                             ]),
                 Forms\Components\Repeater::make('offices')
-                    ->label('Office Information')
                     ->columnSpanFull()
                     ->relationship('offices')
-                    ->maxItems(1)
+                    // ->maxItems(1)
+                    ->defaultItems(0)
                     ->schema([
                         Forms\Components\TextInput::make('name')
                                 ->label('Office Name')
-                                ->maxLength(25),
+                                ->maxLength(25)
+                                ->required(),
                         Forms\Components\Select::make('is_district')
                                 ->label('Office Of')
                                 ->default(true)
-                                ->options([true => 'District', false => 'Village']),
+                                ->options([true => 'District', false => 'Village'])
+                                ->required(),
                         Forms\Components\FileUpload::make('image')
                                 ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
                                 ->disk('public')
@@ -52,7 +54,8 @@ class DistrictResource extends Resource
                                 ->imageResizeMode('cover')
                                 ->imageResizeTargetWidth('1920')
                                 ->imageResizeTargetHeight('1080')
-                                ->imageEditor(),
+                                ->imageEditor()
+                                ->required(),
                         Forms\Components\TextInput::make('map_url')
                             ->url()
                             ->startsWith('https://www.google.com/maps/place/')
@@ -64,11 +67,14 @@ class DistrictResource extends Resource
                                 $set('longitude', $long);
                                 $set('latitude', $lat);
                             })
+                            ->hint('Url must be https://www.google.com/maps/place/...')
                             ->live(onBlur: true),
                         Forms\Components\TextInput::make('longitude')
-                            ->numeric(),
+                            ->numeric()
+                            ->required(),
                         Forms\Components\TextInput::make('latitude')
-                            ->numeric(),
+                            ->numeric()
+                            ->required(),
                     ]),
             ]);
     }
