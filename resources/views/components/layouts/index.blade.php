@@ -18,7 +18,7 @@
     {{-- @endif --}}
 </head>
 
-<body class="font-[raleway] antialiased">
+<body class="font-[raleway] antialiased bg-gray-100">
     {{ $slot }}
 </body>
 

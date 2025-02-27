@@ -1,5 +1,4 @@
-<div
-    class="flex items-center flex-col bg-gradient-to-b from-[#ffb5ab] via-[#fff] to-[#ffb5ab] md:w-fit mx-5 md:mx-auto py-5 px-5 rounded-md">
+<div class="flex items-center flex-col bg-radial-[at_-50%_50%] from-[#ffb5abaa] from-57% to-[#de8789] md:w-fit mx-5 md:mx-auto py-5 px-5 rounded-2xl shadow-2xl">
     {{ $header }}
 
     <table class="border-separate border-spacing-2 border-spacing-x-0 text-left max-w-500 hidden md:block">

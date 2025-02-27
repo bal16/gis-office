@@ -28,7 +28,7 @@
                 latitude="{{ $office->latitude }}"
                 image="{{ $office->image }}"
                 >
-                {{ "$office->name, $office->district_name" }},
+                {{ "$office->name, $office->district_name" }}
             </x-table.item-mobile>
             @endforeach
             <x-slot:footer>
