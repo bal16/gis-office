@@ -17,7 +17,12 @@ class OfficeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'district_id' => 1,
+            'is_district' => fake()->boolean(),
+            'name' => fake()->domainName(),
+            'latitude' => fake()->latitude(),
+            'longitude' => fake()->longitude(),
+            'image' => fake()->imageUrl(),
         ];
     }
 }

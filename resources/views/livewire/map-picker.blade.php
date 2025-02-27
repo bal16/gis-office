@@ -17,7 +17,9 @@
 
 @script
 <script>
+
     const map = L.map('map');
+
 
     const mapInit = () => {
         map.setView(new L.LatLng(-6.9905534, 110.4186332), 12);

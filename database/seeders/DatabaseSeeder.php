@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use App\Models\District;
-use App\Models\User;
+use App\Models;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        Models\User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@tabel.dev',
             'password' => Hash::make('adminadmin'),
@@ -25,6 +25,26 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        // District::factory(5)->create();
+        $districts = collect(json_decode(file_get_contents(base_path('database/json/kecamatan.json'))));
+        $offices = collect(json_decode(file_get_contents(base_path('database/json/kantor.json'))));
+
+        $districts->each(function ($district) {
+            Models\District::factory()->create([
+                'id' => $district->id,
+                'name' => $district->name,
+            ]);
+        });
+
+        $offices->each(function ($office) {
+            Models\Office::factory()->create([
+                'id' => $office->id,
+                'district_id' => $office->district_id,
+                'is_district' => $office->is_district,
+                'name' => $office->name,
+                'latitude' => $office->latitude,
+                'longitude' => $office->longitude,
+                'image' => $office->image,
+            ]);
+        });
     }
 }
