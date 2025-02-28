@@ -5,9 +5,6 @@ navigator.geolocation.getCurrentPosition(function (location) {
     console.log("🚀 ~ latlng:", latlng);
     localStorage.setItem("currentLocation", JSON.stringify(latlng));
     L.marker(latlng).addTo(map);
-    map.setView(latlng, 13);
-
-    // save current location to variable to use later
 });
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -34,9 +31,12 @@ function calcDistance(start, end, id) {
 
         distance = (distance / 1000).toFixed(2) + " km"; // Display distance in kilometers
 
-        const distanceDiv = document.getElementById(id);
+        const ELEMENTS = document.getElementsByClassName(id);
+
         setTimeout(function () {
-            distanceDiv.innerHTML = "Total road distance: " + distance; // Set inner HTML
+            const text = "Total road distance: " + distance;
+            ELEMENTS[0].innerHTML = text; // Set inner HTML
+            ELEMENTS[1].innerHTML = text; // Set inner HTML
         }, 2000);
 
         map.off();

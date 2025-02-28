@@ -9,7 +9,7 @@
             Buka Map
         </a>
         <br />
-        <span id="{{ "jarak-$number" }}" class="pt-2">menghitung jarak...</span>
+        <span  class="pt-2 {{ "jarak-$number" }}">menghitung jarak...</span>
         {{-- {{ $longitude }}, {{ $latitude }} --}}
     </td>
     <td class="rounded-r-xl p-5">
@@ -17,7 +17,6 @@
     </td>
     <script>
         //get location from local storage
-
         setTimeout(() => {
             calcDistance(JSON.parse(localStorage.getItem("currentLocation")), [{{ $latitude }},
                 {{ $longitude }}
