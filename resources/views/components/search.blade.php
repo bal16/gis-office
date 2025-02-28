@@ -17,6 +17,7 @@
     <input
       type="text"
       placeholder="Cari Data..."
+      name="search"
       class="bg-[#fff] py-1 rounded-full w-full pl-10 pr-3 mb-3"
     />
   </div>

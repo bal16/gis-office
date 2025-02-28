@@ -1,10 +1,10 @@
 @assets
-<script src="{{asset('leaflet/leaflet.js')}}"></script>
-<link href="{{asset('leaflet/leaflet.css')}}" rel="stylesheet" />
+    <script src="{{ asset('leaflet/leaflet.js') }}"></script>
+    <link href="{{ asset('leaflet/leaflet.css') }}" rel="stylesheet" />
 @endassets
 @assets
-<script src="{{asset('leaflet/geocoder.js')}}"></script>
-<link href="{{asset('leaflet/geocoder.css')}}" rel="stylesheet" />
+    <script src="{{ asset('leaflet/geocoder.js') }}"></script>
+    <link href="{{ asset('leaflet/geocoder.css') }}" rel="stylesheet" />
 @endassets
 
 <div>
@@ -16,77 +16,70 @@
 
 
 @script
-<script>
-
-    const map = L.map('map');
-
-
-    const mapInit = () => {
-        map.setView(new L.LatLng(-6.9905534, 110.4186332), 12);
-    }
-    // mapInit;
-    // map.setView(new L.LatLng(-6.9905534, 110.4186332), 12);
-    // map.invalidateSize()
-    setTimeout(mapInit, 5000)
-    const tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {})
-
-    // tile.on('tileload', (e) =>{
-    // //     console.log(e)
-    // i++;
-    // console.log('load')
-    // })
-    tile.addTo(map)
+    <script>
+        const map = L.map('map');
 
 
-    let poly = null;
-    const geocoder = L.Control.geocoder({
-        defaultMarkGeocode: false
-    })
+        const mapInit = () => {
+            map.setView(new L.LatLng(-6.9905534, 110.4186332), 12);
+        }
+        setTimeout(mapInit, 5000)
+        const tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {})
 
-    geocoder.on('markgeocode', function (e) {
-            const bbox = e.geocode.bbox;
-            poly = L.polygon([
-                bbox.getSouthEast(),
-                bbox.getNorthEast(),
-                bbox.getNorthWest(),
-                bbox.getSouthWest()
-            ]);
-            map.fitBounds(poly.getBounds());
+        tile.addTo(map)
+
+
+        let poly = null;
+        const geocoder = L.Control.geocoder({
+            defaultMarkGeocode: false
         })
-        .addTo(map);
 
-    let marker = null;
+        geocoder.on('markgeocode', function(e) {
+                const bbox = e.geocode.bbox;
+                poly = L.polygon([
+                    bbox.getSouthEast(),
+                    bbox.getNorthEast(),
+                    bbox.getNorthWest(),
+                    bbox.getSouthWest()
+                ]);
+                map.fitBounds(poly.getBounds());
+            })
+            .addTo(map);
 
-    map.on('click', function (e) {
-        const lat = e.latlng.lat;
-        const lng = e.latlng.lng;
+        let marker = null;
 
-        const LAT = document.getElementById('mountedActionsData.0.latitude') || document.getElementById('mountedTableActionsData.0.latitude')
-        const LNG = document.getElementById('mountedActionsData.0.longitude') || document.getElementById('mountedTableActionsData.0.longitude')
+        map.on('click', function(e) {
+            const lat = e.latlng.lat;
+            const lng = e.latlng.lng;
 
-        // Remove the previous marker if it exists
-        if (marker) {
-            map.removeLayer(marker);
-        }
+            const LAT = document.getElementById('mountedActionsData.0.latitude') || document.getElementById(
+                'mountedTableActionsData.0.latitude')
+            const LNG = document.getElementById('mountedActionsData.0.longitude') || document.getElementById(
+                'mountedTableActionsData.0.longitude')
 
-        if (lat == null || lng == null) {
-            return;
-        }
+            // Remove the previous marker if it exists
+            if (marker) {
+                map.removeLayer(marker);
+            }
 
-        // Add a new marker at the clicked location
-        marker = L.marker([lat, lng]).addTo(map);
+            if (lat == null || lng == null) {
+                return;
+            }
 
-        // Update the latitude and longitude input fields
+            // Add a new marker at the clicked location
+            marker = L.marker([lat, lng]).addTo(map);
 
-        LAT.value = lat;
-        LAT.dispatchEvent(new Event('input'));
+            // Update the latitude and longitude input fields
 
-        LNG.value = lng;
-        LNG.dispatchEvent(new Event('input'));
+            LAT.value = lat;
+            LAT.dispatchEvent(new Event('input'));
 
-        // Emit an event to Livewire with the new coordinates
-        //Livewire.dispatch('updateCoordinates', lat, lng);
+            LNG.value = lng;
+            LNG.dispatchEvent(new Event('input'));
+
+            // Emit an event to Livewire with the new coordinates
+            //Livewire.dispatch('updateCoordinates', lat, lng);
 
         });
-</script>
+    </script>
 @endscript
