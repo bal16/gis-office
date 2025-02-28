@@ -1,17 +1,16 @@
 <x-layouts>
     @assets
-        <script src="{{ asset('leaflet/leaflet.js') }}"></script>
-        <script src="https://unpkg.com/leaflet-routing-machine@3.2.5/dist/leaflet-routing-machine.js"></script>
+        <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
+        <script src="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.js') }}"></script>
     @endassets
     @assets
-        <link href="{{ asset('leaflet/leaflet.css') }}" rel="stylesheet" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.5/dist/leaflet-routing-machine.css" />
-    @endassets
-    @assets
-        <script src="{{ asset('js/calcDist.js') }}"></script>
+        <link href="{{ asset('vendor/leaflet/leaflet.css') }}" rel="stylesheet" />
+        <link href="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.css') }}" rel="stylesheet" />
     @endassets
     <x-layouts.header />
     <div id="map" />
+
+    <script src="{{ asset('js/calcDist.js') }}"></script>
 
     <main class="bg-linear-to-b from-[#ffb5ab] from-0% to-[#fff] to-30% text-center pb-15 md:max-w-[1280px] mx-auto">
         <x-hero />

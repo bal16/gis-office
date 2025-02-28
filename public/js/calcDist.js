@@ -1,11 +1,18 @@
-function calcDistance(start, end, id) {
-    const map = L.map("map").setView([51.505, -0.09], 13); // Set initial latitude, longitude and zoom
+const map = L.map("map").setView([51.505, -0.09], 13); // Set initial latitude, longitude and zoom
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
 
+// Ask user for current location
+navigator.geolocation.getCurrentPosition(function (location) {
+    const latlng = [location.coords.latitude, location.coords.longitude];
+    L.marker(latlng).addTo(map);
+    map.setView(latlng, 13);
+});
+
+const calcDistance = (start, end, id) => {
     const control = L.Routing.control({
         waypoints: [
             L.latLng(start[0], start[1]), // Starting point (example)
@@ -28,9 +35,9 @@ function calcDistance(start, end, id) {
         const distanceDiv = document.getElementById(id);
         setTimeout(function () {
             distanceDiv.innerHTML = "Total road distance: " + distance; // Set inner HTML
-        }, 5000);
+        }, 2000);
 
         map.off();
         map.remove();
     });
-}
+};

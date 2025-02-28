@@ -15,7 +15,9 @@
     <td class="rounded-r-xl p-5">
         <img src="{{ asset('storage/' . $image) }}" class="rounded-xl h-60 w-60 object-cover" />
     </td>
-    {{-- <script>
-        calcDistance([{{ $latitude }}, {{ $longitude }}], [51.505, -0.09], "jarak-{{ $number }}");
-    </script> --}}
+    <script>
+        setTimeout(() => {
+            calcDistance([{{ $latitude }}, {{ $longitude }}], [51.505, -0.09], "jarak-{{ $number }}");
+        }, 2000)
+    </script>
 </tr>

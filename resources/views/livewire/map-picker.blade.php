@@ -1,10 +1,10 @@
 @assets
-    <script src="{{ asset('leaflet/leaflet.js') }}"></script>
-    <link href="{{ asset('leaflet/leaflet.css') }}" rel="stylesheet" />
+    <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
+    <link href="{{ asset('vendor/leaflet/leaflet.css') }}" rel="stylesheet" />
 @endassets
 @assets
-    <script src="{{ asset('leaflet/geocoder.js') }}"></script>
-    <link href="{{ asset('leaflet/geocoder.css') }}" rel="stylesheet" />
+    <script src="{{ asset('vendor/leaflet/geocoder.js') }}"></script>
+    <link href="{{ asset('vendor/leaflet/geocoder.css') }}" rel="stylesheet" />
 @endassets
 
 <div>
