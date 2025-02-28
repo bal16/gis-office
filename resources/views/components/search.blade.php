@@ -1,4 +1,4 @@
-<div class="relative w-full mx-75">
+<div class="relative w-full mx-75 pt-2">
     <div class="absolute mt-1.5 ml-2.5">
       <svg
         xmlns="http://www.w3.org/2000/svg"
