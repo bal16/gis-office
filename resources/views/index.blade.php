@@ -8,9 +8,6 @@
         <link href="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.css') }}" rel="stylesheet" />
     @endassets
     <x-layouts.header />
-    <div id="map" />
-
-    <script src="{{ asset('js/calcDist.js') }}"></script>
 
     <main class="bg-linear-to-b from-[#ffb5ab] from-0% to-[#fff] to-30% text-center pb-15 md:max-w-[1280px] mx-auto">
         <x-hero />
@@ -46,4 +43,5 @@
     </main>
     <x-layouts.footer />
 
+    <script src="{{ asset('js/calcDist.js') }}"></script>
 </x-layouts>

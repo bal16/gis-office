@@ -1,18 +1,20 @@
-const map = L.map("map").setView([51.505, -0.09], 13); // Set initial latitude, longitude and zoom
+const map = L.map(document.createElement("div")).setView([51.505, -0.09], 13);
+// Ask user for current location
+navigator.geolocation.getCurrentPosition(function (location) {
+    const latlng = [location.coords.latitude, location.coords.longitude];
+    console.log("🚀 ~ latlng:", latlng);
+    localStorage.setItem("currentLocation", JSON.stringify(latlng));
+    L.marker(latlng).addTo(map);
+    map.setView(latlng, 13);
 
+    // save current location to variable to use later
+});
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-// Ask user for current location
-navigator.geolocation.getCurrentPosition(function (location) {
-    const latlng = [location.coords.latitude, location.coords.longitude];
-    L.marker(latlng).addTo(map);
-    map.setView(latlng, 13);
-});
-
-const calcDistance = (start, end, id) => {
+function calcDistance(start, end, id) {
     const control = L.Routing.control({
         waypoints: [
             L.latLng(start[0], start[1]), // Starting point (example)
@@ -38,6 +40,6 @@ const calcDistance = (start, end, id) => {
         }, 2000);
 
         map.off();
-        map.remove();
+        // map.remove();
     });
-};
+}

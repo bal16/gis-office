@@ -16,8 +16,12 @@
         <img src="{{ asset('storage/' . $image) }}" class="rounded-xl h-60 w-60 object-cover" />
     </td>
     <script>
+        //get location from local storage
+
         setTimeout(() => {
-            calcDistance([{{ $latitude }}, {{ $longitude }}], [51.505, -0.09], "jarak-{{ $number }}");
+            calcDistance(JSON.parse(localStorage.getItem("currentLocation")), [{{ $latitude }},
+                {{ $longitude }}
+            ], "jarak-{{ $number }}");
         }, 2000)
     </script>
 </tr>
