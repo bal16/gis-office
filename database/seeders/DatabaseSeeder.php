@@ -28,9 +28,9 @@ class DatabaseSeeder extends Seeder
 
         // unzip file images.zip
         $zip = new \ZipArchive;
-        $res = $zip->open(base_path('database/seeders/data/images.zip'));
+        $res = $zip->open($this->dataPath('images.zip'));
         if ($res === TRUE) {
-            $zip->extractTo(base_path('storage/app/public/offices'));
+            $zip->extractTo($this->dataPath());
             $zip->close();
         } else {
             echo 'failed, code:' . $res;
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
 
         $offices = $this->makeCollectionfromJSON($this->dataPath('kantor.json'));
 
-        $offices->each(function ($office) use ($districts) {
+        $offices->each(function ($office)  {
             $imagePath = $this->dataPath($office->image);
 
             if (file_exists($imagePath)) {
@@ -80,8 +80,8 @@ class DatabaseSeeder extends Seeder
         });
     }
 
-    private function dataPath($filename){
-        return base_path("database/seeders/data/$filename");
+    private function dataPath($path=''){
+        return base_path("database/seeders/data/$path");
     }
 
     private function makeCollectionfromJSON($filename){
