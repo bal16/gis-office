@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AdministrationResource\Pages;
-use App\Filament\Resources\AdministrationResource\RelationManagers;
+use App\Filament\Resources\ApprovalResource\Pages;
+use App\Filament\Resources\ApprovalResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -14,12 +14,12 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AdministrationResource extends Resource
+class ApprovalResource extends Resource
 {
     protected static ?string $model = User::class;
 
     protected static ?string $modelLabel = 'Approval';
-    protected static ?string $navigationGroup = 'Admins';
+    protected static ?string $navigationGroup = 'Administration';
     protected static ?string $navigationIcon = 'heroicon-o-shield-check';
 
     public static function form(Form $form): Form
@@ -38,6 +38,8 @@ class AdministrationResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')->sortable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('email')
                     ->sortable()
                     ->grow(),
                 Tables\Columns\ToggleColumn::make('accepted_at')
@@ -65,6 +67,7 @@ class AdministrationResource extends Resource
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 // Tables\Actions\BulkActionGroup::make([
@@ -83,7 +86,7 @@ class AdministrationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAdministrations::route('/'),
+            'index' => Pages\ListApprovals::route('/'),
             // 'create' => Pages\CreateAdmin::route('/create'),
             // 'edit' => Pages\EditAdmin::route('/{record}/edit'),
         ];

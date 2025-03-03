@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
                 $imageContent = file_get_contents($imagePath);
                 $extension = pathinfo($office->image, PATHINFO_EXTENSION);
 
-                $hashedFileName = 'image/' . Str::random(40) . '.' . $extension;  // Random 40 character string + extension
+                $hashedFileName = 'offices/' . Str::random(40) . '.' . $extension;  // Random 40 character string + extension
 
                 Storage::disk('public')->put( $hashedFileName, $imageContent);
 
