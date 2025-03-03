@@ -1,1 +1,1739 @@
-[{"id":1,"district_id":1,"name":"KELURAHAN GEDAWANG","latitude":-7.0826933871,"longitude":110.4276663931,"image":"gedawang.jpg","is_district":false},{"id":2,"district_id":1,"name":"KELURAHAN PUDAKPAYUNG","latitude":-7.1014905801,"longitude":110.4096021803,"image":"pudakpayung.jpg","is_district":false},{"id":3,"district_id":1,"name":"KELURAHAN JABUNGAN","latitude":-7.0839132587,"longitude":110.4487495245,"image":"jabungan.jpg","is_district":false},{"id":4,"district_id":1,"name":"KELURAHAN PADANGSARI","latitude":-7.0758965001,"longitude":110.424300165,"image":"padangsari.jpg","is_district":false},{"id":5,"district_id":1,"name":"KELURAHAN BANYUMANIK","latitude":-7.0739096956,"longitude":110.410972816,"image":"banyumanik.jpg","is_district":false},{"id":6,"district_id":1,"name":"KELURAHAN SRONDOL WETAN","latitude":-7.0636950455,"longitude":110.4172696372,"image":"srondol_wetan.png","is_district":false},{"id":7,"district_id":1,"name":"KELURAHAN PEDALANGAN","latitude":-7.0683513676,"longitude":110.425135909,"image":"pedalangan.png","is_district":false},{"id":8,"district_id":1,"name":"KELURAHAN SUMURBOTO","latitude":-7.0509750999,"longitude":110.4258122997,"image":"sumurboto.jpeg","is_district":false},{"id":9,"district_id":1,"name":"KELURAHAN SRONDOL KULON","latitude":-7.0592788774,"longitude":110.4122458035,"image":"srondol_kulon.png","is_district":false},{"id":10,"district_id":1,"name":"KELURAHAN TINJOMOYO","latitude":-7.0316236585,"longitude":110.4167245752,"image":"tinjomoyo.png","is_district":false},{"id":11,"district_id":1,"name":"KELURAHAN NGESREP","latitude":-7.0323773756,"longitude":110.4182902673,"image":"ngesrep.png","is_district":false},{"id":12,"district_id":2,"name":"KELURAHAN CANDI","latitude":-7.0081075417,"longitude":110.4314074028,"image":"candi.png","is_district":false},{"id":13,"district_id":2,"name":"KELURAHAN JATINGALEH","latitude":-7.0309449777,"longitude":110.4193658799,"image":"jatingaleh.jpeg","is_district":false},{"id":14,"district_id":2,"name":"KELURAHAN JOMBLANG","latitude":-7.0127491439,"longitude":110.4404185673,"image":"jomblang.png","is_district":false},{"id":15,"district_id":2,"name":"KELURAHAN KALIWIRU","latitude":-7.0182283532,"longitude":110.4250951034,"image":"kaliwiru.png","is_district":false},{"id":16,"district_id":2,"name":"KELURAHAN KARANGANYAR GUNUNG","latitude":-7.0162153436,"longitude":110.4324075916,"image":"karanganyar_gunung.png","is_district":false},{"id":17,"district_id":2,"name":"KELURAHAN TEGALSARI","latitude":-7.0033665243,"longitude":110.4229045044,"image":"tegalsari.jpeg","is_district":false},{"id":18,"district_id":2,"name":"KELURAHAN WONOTINGAL","latitude":-7.0139967173,"longitude":110.4222940139,"image":"wonotingal.jpg","is_district":false},{"id":19,"district_id":3,"name":"KELURAHAN BENDAN DUWUR","latitude":-7.0198998324,"longitude":110.3951183785,"image":"bendan_duwur.png","is_district":false},{"id":20,"district_id":3,"name":"KELURAHAN BENDAN NGISOR","latitude":-7.0108230883,"longitude":110.3965427702,"image":"bendan_ngisor.jpg","is_district":false},{"id":21,"district_id":3,"name":"KELURAHAN BENDUNGAN","latitude":-6.997087603,"longitude":110.4070389902,"image":"bendungan.png","is_district":false},{"id":22,"district_id":3,"name":"KELURAHAN GAJAHMUNGKUR","latitude":-7.0057817391,"longitude":110.4136015317,"image":"gajahmungkur.png","is_district":false},{"id":23,"district_id":3,"name":"KELURAHAN KARANGREJO","latitude":-7.027841307,"longitude":110.4126200821,"image":"karangrejo.png","is_district":false},{"id":24,"district_id":3,"name":"KELURAHAN LEMPONGSARI","latitude":-6.9975998259,"longitude":110.4134172336,"image":"lempongsari.jpeg","is_district":false},{"id":25,"district_id":3,"name":"KELURAHAN PETOMPON","latitude":-7.0015907111,"longitude":110.4046041442,"image":"petompon.png","is_district":false},{"id":26,"district_id":3,"name":"KELURAHAN SAMPANGAN","latitude":-7.0137706868,"longitude":110.3902450929,"image":"sampangan.png","is_district":false},{"id":27,"district_id":4,"name":"KELURAHAN GAYAMSARI","latitude":-7.0001886686,"longitude":110.4488301458,"image":"gayamsari.jpeg","is_district":false},{"id":28,"district_id":4,"name":"KELURAHAN KALIGAWE","latitude":-6.9643902682,"longitude":110.4489594254,"image":"kaligawe.jpeg","is_district":false},{"id":29,"district_id":4,"name":"KELURAHAN PANDEAN LAMPER","latitude":-6.9919370867,"longitude":110.4452505179,"image":"pandean_lamper.jpg","is_district":false},{"id":30,"district_id":4,"name":"KELURAHAN SAMBIREJO","latitude":-6.986561557,"longitude":110.4425103028,"image":"sambirejo.png","is_district":false},{"id":31,"district_id":4,"name":"KELURAHAN SAWAH BESAR","latitude":-6.9729460715,"longitude":110.4465376378,"image":"sawah_besar.png","is_district":false},{"id":32,"district_id":4,"name":"KELURAHAN SIWALAN","latitude":-6.9815914075,"longitude":110.4504872262,"image":"siwalan.png","is_district":false},{"id":33,"district_id":4,"name":"KELURAHAN TAMBAKREJO","latitude":-6.9571456734,"longitude":110.4421539105,"image":"tambakrejo.png","is_district":false},{"id":34,"district_id":5,"name":"KELURAHAN BANGETAYU KULON","latitude":-6.9808806453,"longitude":110.4771337025,"image":"bangetayu_kulon.png","is_district":false},{"id":35,"district_id":5,"name":"KELURAHAN BANGETAYU WETAN","latitude":-6.9828031828,"longitude":110.477011869,"image":"bangetayu_wetan.png","is_district":false},{"id":36,"district_id":5,"name":"KELURAHAN BANJARDOWO","latitude":-6.954864275,"longitude":110.4855307133,"image":"banjardowo.png","is_district":false},{"id":37,"district_id":5,"name":"KELURAHAN GEBANGSARI","latitude":-6.9696406928,"longitude":110.4672095706,"image":"gebangsari.png","is_district":false},{"id":38,"district_id":5,"name":"KELURAHAN GENUKSARI","latitude":-6.9534160934,"longitude":110.4797545648,"image":"genuksari.png","is_district":false},{"id":39,"district_id":5,"name":"KELURAHAN KARANGROTO","latitude":-6.9580460685,"longitude":110.4941210896,"image":"karangroto.png","is_district":false},{"id":40,"district_id":5,"name":"KELURAHAN KUDU","latitude":-6.9672485819,"longitude":110.4988531487,"image":"kudu.png","is_district":false},{"id":41,"district_id":5,"name":"KELURAHAN MUKTIHARJO LOR","latitude":-6.9671417136,"longitude":110.4568726966,"image":"muktiharjo_lor.jpg","is_district":false},{"id":42,"district_id":5,"name":"KELURAHAN PENGGARON LOR","latitude":-6.974918815,"longitude":110.498072102,"image":"penggaron_lor.jpeg","is_district":false},{"id":43,"district_id":5,"name":"KELURAHAN SEMBUNGHARJO","latitude":-6.9767321262,"longitude":110.490073665,"image":"sembungharjo.jpeg","is_district":false},{"id":44,"district_id":5,"name":"KELURAHAN TERBOYO KULON","latitude":-6.952682998,"longitude":110.4518171306,"image":"terboyo_kulon.jpg","is_district":false},{"id":45,"district_id":5,"name":"KELURAHAN TERBOYO WETAN","latitude":-6.9513669882,"longitude":110.4666600772,"image":"terboyo_wetan.jpg","is_district":false},{"id":46,"district_id":5,"name":"KELURAHAN TRIMULYO","latitude":-6.950920655,"longitude":110.4784889092,"image":"trimulyo.jpg","is_district":false},{"id":47,"district_id":6,"name":"KELURAHAN CEPOKO","latitude":-7.0725296467,"longitude":110.3517722981,"image":"cepoko.jpeg","is_district":false},{"id":48,"district_id":6,"name":"KELURAHAN GUNUNGPATI","latitude":-7.0876443747,"longitude":110.3615707757,"image":"gunungpati.jpeg","is_district":false},{"id":49,"district_id":6,"name":"KELURAHAN JATIREJO","latitude":-7.060535839,"longitude":110.3481194582,"image":"jatirejo.jpeg","is_district":false},{"id":50,"district_id":6,"name":"KELURAHAN KALISEGORO","latitude":-7.0596123786,"longitude":110.3831351927,"image":"kalisegoro.jpeg","is_district":false},{"id":51,"district_id":6,"name":"KELURAHAN KANDRI","latitude":-7.058697862,"longitude":110.35740322,"image":"kandri.jpeg","is_district":false},{"id":52,"district_id":6,"name":"KELURAHAN MANGUNSARI","latitude":-7.0808147098,"longitude":110.3774656298,"image":"mangunsari.jpeg","is_district":false},{"id":53,"district_id":6,"name":"KELURAHAN NGIJO","latitude":-7.0709352739,"longitude":110.3835312744,"image":"ngijo.jpeg","is_district":false},{"id":54,"district_id":6,"name":"KELURAHAN NONGKOSAWIT","latitude":-7.0672119663,"longitude":110.3654708123,"image":"nongkosawit.jpeg","is_district":false},{"id":55,"district_id":6,"name":"KELURAHAN PAKINTELAN","latitude":-7.0889898566,"longitude":110.3956720567,"image":"pakintelan.jpeg","is_district":false},{"id":56,"district_id":6,"name":"KELURAHAN PATEMON","latitude":-7.0680915341,"longitude":110.3995836059,"image":"patemon.jpeg","is_district":false},{"id":57,"district_id":6,"name":"KELURAHAN PLALANGAN","latitude":-7.0870043917,"longitude":110.3674636028,"image":"plalangan.jpeg","is_district":false},{"id":58,"district_id":6,"name":"KELURAHAN PONGANGAN","latitude":-7.0590132939,"longitude":110.3645970773,"image":"pongangan.jpeg","is_district":false},{"id":59,"district_id":6,"name":"KELURAHAN SADENG","latitude":-7.0392988015,"longitude":110.365678716,"image":"sadeng.jpeg","is_district":false},{"id":60,"district_id":6,"name":"KELURAHAN SEKARAN","latitude":-7.0521170324,"longitude":110.3939899423,"image":"sekaran.jpeg","is_district":false},{"id":61,"district_id":6,"name":"KELURAHAN SUKOREJO","latitude":-7.0262059652,"longitude":110.3798467071,"image":"sukorejo.jpeg","is_district":false},{"id":62,"district_id":6,"name":"KELURAHAN SUMURREJO","latitude":-7.107915424,"longitude":110.3873816952,"image":"sumurrejo.jpeg","is_district":false},{"id":63,"district_id":7,"name":"KELURAHAN BUBAKAN","latitude":-7.0925712909,"longitude":110.3203921775,"image":"bubakan.jpg","is_district":false},{"id":64,"district_id":7,"name":"KELURAHAN CANGKIRAN","latitude":-7.088173802,"longitude":110.3072463213,"image":"cangkiran.jpg","is_district":false},{"id":65,"district_id":7,"name":"KELURAHAN JATIBARANG","latitude":-7.0533637297,"longitude":110.3337145805,"image":"jatibarang.jpg","is_district":false},{"id":66,"district_id":7,"name":"KELURAHAN JATISARI","latitude":-7.0776831247,"longitude":110.3083933071,"image":"jatisari.jpg","is_district":false},{"id":67,"district_id":7,"name":"KELURAHAN KARANGMALANG","latitude":-7.0958064861,"longitude":110.3336107135,"image":"karangmalang.jpg","is_district":false},{"id":68,"district_id":7,"name":"KELURAHAN KEDUNGPANI","latitude":-7.0409369871,"longitude":110.337932174,"image":"kedungpani.jpg","is_district":false},{"id":69,"district_id":7,"name":"KELURAHAN MIJEN","latitude":-7.0528147811,"longitude":110.3185013227,"image":"mijen.jpg","is_district":false},{"id":70,"district_id":7,"name":"KELURAHAN NGADIRGO","latitude":-7.0307100461,"longitude":110.3141562218,"image":"ngadirgo.jpg","is_district":false},{"id":71,"district_id":7,"name":"KELURAHAN PESANTREN","latitude":-7.0216669927,"longitude":110.3104015283,"image":"pesantren.jpg","is_district":false},{"id":72,"district_id":7,"name":"KELURAHAN POLAMAN","latitude":-7.093726403,"longitude":110.3341773836,"image":"polaman.jpg","is_district":false},{"id":73,"district_id":7,"name":"KELURAHAN PURWOSARI","latitude":-7.0838818229,"longitude":110.3342351491,"image":"purwosari.jpg","is_district":false},{"id":74,"district_id":7,"name":"KELURAHAN TAMBANGAN","latitude":-7.0811579063,"longitude":110.3093965769,"image":"tambangan.jpg","is_district":false},{"id":75,"district_id":7,"name":"KELURAHAN WONOLOPO","latitude":-7.0560927118,"longitude":110.3101389459,"image":"wonolopo.jpg","is_district":false},{"id":76,"district_id":7,"name":"KELURAHAN WONOPLUMBON","latitude":-7.0386950807,"longitude":110.2918667302,"image":"wonoplumbon.jpg","is_district":false},{"id":77,"district_id":8,"name":"KELURAHAN BAMBANKEREP","latitude":-7.0110463085,"longitude":110.3636514929,"image":"bambankerep.jpg","is_district":false},{"id":78,"district_id":8,"name":"KELURAHAN BRINGIN","latitude":-6.9966754807,"longitude":110.332023395,"image":"bringin.jpg","is_district":false},{"id":79,"district_id":8,"name":"KELURAHAN GONDORIYO","latitude":-6.9949392663,"longitude":110.3295139917,"image":"gondoriyo.jpg","is_district":false},{"id":80,"district_id":8,"name":"KELURAHAN KALIPANCUR","latitude":-7.0077271341,"longitude":110.3779506872,"image":"kalipancur.jpg","is_district":false},{"id":81,"district_id":8,"name":"KELURAHAN NGALIYAN","latitude":-6.9965524671,"longitude":110.3481425112,"image":"ngaliyan.jpg","is_district":false},{"id":82,"district_id":8,"name":"KELURAHAN PODOREJO","latitude":-7.0083183447,"longitude":110.2913756952,"image":"podorejo.jpg","is_district":false},{"id":83,"district_id":8,"name":"KELURAHAN PURWOYOSO","latitude":-6.9886035717,"longitude":110.364948838,"image":"purwoyoso.jpg","is_district":false},{"id":84,"district_id":8,"name":"KELURAHAN TAMBAKAJI","latitude":-6.9829089241,"longitude":110.35134061,"image":"tambakaji.jpg","is_district":false},{"id":85,"district_id":8,"name":"KELURAHAN WONOSARI","latitude":-6.9749007849,"longitude":110.3155727845,"image":"wonosari.jpg","is_district":false},{"id":86,"district_id":8,"name":"KELURAHAN WATES","latitude":-7.0168646908,"longitude":110.3381897085,"image":"wates.jpeg","is_district":false},{"id":87,"district_id":9,"name":"KELURAHAN GEMAH","latitude":-7.0090492841,"longitude":110.4644943999,"image":"gemah.jpg","is_district":false},{"id":88,"district_id":9,"name":"KELURAHAN KALICARI","latitude":-6.9967123413,"longitude":110.4553415321,"image":"kalicari.jpg","is_district":false},{"id":89,"district_id":9,"name":"KELURAHAN MUKTIHARJO KIDUL","latitude":-6.9781561157,"longitude":110.4584930803,"image":"muktiharjo_kidul.jpg","is_district":false},{"id":90,"district_id":9,"name":"KELURAHAN PALEBON","latitude":-7.0053194115,"longitude":110.464567603,"image":"palebon.jpg","is_district":false},{"id":91,"district_id":9,"name":"KELURAHAN PEDURUNGAN KIDUL","latitude":-7.0164750749,"longitude":110.4725263703,"image":"pedurungan_kidul.jpg","is_district":false},{"id":92,"district_id":9,"name":"KELURAHAN PEDURUNGAN LOR","latitude":-7.0075233086,"longitude":110.4871538688,"image":"pedurungan_lor.jpg","is_district":false},{"id":93,"district_id":9,"name":"KELURAHAN PEDURUNGAN TENGAH","latitude":-7.0099417652,"longitude":110.4723691466,"image":"pedurungan_tengah.jpg","is_district":false},{"id":94,"district_id":9,"name":"KELURAHAN PENGGARON KIDUL","latitude":-7.0175038436,"longitude":110.4890067184,"image":"penggaron_kidul.jpg","is_district":false},{"id":95,"district_id":9,"name":"KELURAHAN PLAMONGANSARI","latitude":-7.0237651948,"longitude":110.485895456,"image":"palmongansari.jpg","is_district":false},{"id":96,"district_id":9,"name":"KELURAHAN TLOGOMULYO","latitude":-6.9986736674,"longitude":110.4799011726,"image":"tlogomulyo.jpg","is_district":false},{"id":97,"district_id":9,"name":"KELURAHAN TLOGOSARI KULON","latitude":-6.9895211322,"longitude":110.4581214854,"image":"tlogosari_kulon.jpg","is_district":false},{"id":98,"district_id":9,"name":"KELURAHAN TLOGOSARI WETAN","latitude":-6.9924462354,"longitude":110.4688695101,"image":"tlogosari_wetan.jpg","is_district":false},{"id":99,"district_id":10,"name":"KELURAHAN BOJONGSALAMAN","latitude":-6.9850525159,"longitude":110.3978760559,"image":"bojongsalaman.jpg","is_district":false},{"id":100,"district_id":10,"name":"KELURAHAN BONGSARI","latitude":-6.9924325894,"longitude":110.3985707931,"image":"bongsari.jpg","is_district":false},{"id":101,"district_id":10,"name":"KELURAHAN CABEAN","latitude":-6.9824331257,"longitude":110.3975806746,"image":"cabean.jpg","is_district":false},{"id":102,"district_id":10,"name":"KELURAHAN GISIKDRONO","latitude":-6.9879104388,"longitude":110.3896083146,"image":"gisikdrono.jpg","is_district":false},{"id":103,"district_id":10,"name":"KELURAHAN KALIBANTENG KIDUL","latitude":-6.9911725913,"longitude":110.3830020721,"image":"kalibanteng_kidul.jpg","is_district":false},{"id":104,"district_id":10,"name":"KELURAHAN KALIBANTENG KULON","latitude":-6.9865687164,"longitude":110.3803014346,"image":"kalibanteng_kulon.jpg","is_district":false},{"id":105,"district_id":10,"name":"KELURAHAN KARANGAYU","latitude":-6.9804284645,"longitude":110.3911067139,"image":"karangayu.jpg","is_district":false},{"id":106,"district_id":10,"name":"KELURAHAN KEMBANGARUM","latitude":-6.9979809012,"longitude":110.3790312629,"image":"kembangarum.jpg","is_district":false},{"id":107,"district_id":10,"name":"KELURAHAN KRAPYAK","latitude":-6.9855452636,"longitude":110.3665912476,"image":"krapyak.jpg","is_district":false},{"id":108,"district_id":10,"name":"KELURAHAN KROBOKAN","latitude":-6.9760244467,"longitude":110.3986089509,"image":"krobokan.jpg","is_district":false},{"id":109,"district_id":10,"name":"KELURAHAN MANYARAN","latitude":-7.0042076223,"longitude":110.3912798191,"image":"manyaran.jpg","is_district":false},{"id":110,"district_id":10,"name":"KELURAHAN NGEMPLAKSIMONGAN","latitude":-7.0028196874,"longitude":110.3950191682,"image":"ngemplaksimongan.jpg","is_district":false},{"id":111,"district_id":10,"name":"KELURAHAN SALAMANMLOYO","latitude":-6.9843091823,"longitude":110.3925007324,"image":"salamanmloyo.jpg","is_district":false},{"id":112,"district_id":10,"name":"KELURAHAN TAMBAKHARJO","latitude":-6.9782705016,"longitude":110.3659643191,"image":"tambakharjo.jpg","is_district":false},{"id":113,"district_id":10,"name":"KELURAHAN TAWANGMAS","latitude":-6.970543392,"longitude":110.3949955258,"image":"tawangmas.jpg","is_district":false},{"id":114,"district_id":10,"name":"KELURAHAN TAWANGSARI","latitude":-6.9728733522,"longitude":110.3840376953,"image":"tawangsari.jpg","is_district":false},{"id":115,"district_id":11,"name":"KELURAHAN BARUSARI","latitude":-6.9910727843,"longitude":110.4039912396,"image":"barusari.jpg","is_district":false},{"id":116,"district_id":11,"name":"KELURAHAN BULUSTALAN","latitude":-6.9835127241,"longitude":110.4038846353,"image":"bulustalan.jpg","is_district":false},{"id":117,"district_id":11,"name":"KELURAHAN LAMPER KIDUL","latitude":-7.0075289157,"longitude":110.4393013208,"image":"lamper_kidul.jpg","is_district":false},{"id":118,"district_id":11,"name":"KELURAHAN LAMPER LOR","latitude":-7.0009734055,"longitude":110.4395592321,"image":"Lamper_Lor.jpg","is_district":false},{"id":119,"district_id":11,"name":"KELURAHAN LAMPER TENGAH","latitude":-7.006760155,"longitude":110.4463641891,"image":"Lamper_Tengah.jpg","is_district":false},{"id":120,"district_id":11,"name":"KELURAHAN MUGASSARI","latitude":-6.9914135317,"longitude":110.4162744275,"image":"Mugassari.jpg","is_district":false},{"id":121,"district_id":11,"name":"KELURAHAN PETERONGAN","latitude":-6.9989364584,"longitude":110.4358536784,"image":"Peterongan.jpg","is_district":false},{"id":122,"district_id":11,"name":"KELURAHAN PLEBURAN","latitude":-6.9995887672,"longitude":110.4242518711,"image":"Pleburan.jpg","is_district":false},{"id":123,"district_id":11,"name":"KELURAHAN RANDUSARI","latitude":-6.9868467056,"longitude":110.4116986751,"image":"Randusari.jpg","is_district":false},{"id":124,"district_id":11,"name":"KELURAHAN WONODRI","latitude":-7.0017390401,"longitude":110.4312894733,"image":"Wonodri.jpg","is_district":false},{"id":125,"district_id":12,"name":"KELURAHAN BANGUNHARJO","latitude":-6.9746466421,"longitude":110.4218546791,"image":"Bangunharjo.jpg","is_district":false},{"id":126,"district_id":12,"name":"KELURAHAN BRUMBUNGAN","latitude":-6.9835419614,"longitude":110.426776026,"image":"Brumbungan.jpg","is_district":false},{"id":127,"district_id":12,"name":"KELURAHAN GABAHAN","latitude":-6.9808528031,"longitude":110.4276101125,"image":"Gabahan.jpg","is_district":false},{"id":128,"district_id":12,"name":"KELURAHAN JAGALAN","latitude":-7.5661315734,"longitude":110.8452792303,"image":"Jagalan.jpg","is_district":false},{"id":129,"district_id":12,"name":"KELURAHAN KARANG KIDUL","latitude":-6.9899980138,"longitude":110.4254607766,"image":"Karang_Kidul.jpg","is_district":false},{"id":130,"district_id":12,"name":"KELURAHAN KAUMAN","latitude":-6.9744370048,"longitude":110.4233093429,"image":"Kauman.jpg","is_district":false},{"id":131,"district_id":12,"name":"KELURAHAN KEMBANGSARI","latitude":-6.9800009625,"longitude":110.4177006689,"image":"Kembangsari.jpg","is_district":false},{"id":132,"district_id":12,"name":"KELURAHAN KRANGGAN","latitude":-6.9773476867,"longitude":110.4275546198,"image":"Kranggan.jpg","is_district":false},{"id":133,"district_id":12,"name":"KELURAHAN MIROTO","latitude":-6.9834359292,"longitude":110.4199046071,"image":"Miroto.jpg","is_district":false},{"id":134,"district_id":12,"name":"KELURAHAN PANDANSARI","latitude":-6.9732490771,"longitude":110.4186816213,"image":"Pandansari.jpg","is_district":false},{"id":135,"district_id":12,"name":"KELURAHAN PEKUNDEN","latitude":-6.9876800023,"longitude":110.4216874697,"image":"Pekunden.jpg","is_district":false},{"id":136,"district_id":12,"name":"KELURAHAN PINDRIKAN KIDUL","latitude":-6.9812935097,"longitude":110.4091103718,"image":"Pindrikan_Kidul.jpg","is_district":false},{"id":137,"district_id":12,"name":"KELURAHAN PINDRIKAN LOR","latitude":-6.9781650717,"longitude":110.4090598419,"image":"Pindrikan_Lor.jpg","is_district":false},{"id":138,"district_id":12,"name":"KELURAHAN PURWODINATAN","latitude":-6.9714614673,"longitude":110.4264057182,"image":"Purwodinatan.jpg","is_district":false},{"id":139,"district_id":12,"name":"KELURAHAN SEKAYU","latitude":-6.9805923944,"longitude":110.4142722875,"image":"Sekayu.jpg","is_district":false},{"id":140,"district_id":13,"name":"KELURAHAN BUGANGAN","latitude":-6.9730690888,"longitude":110.438153583,"image":"Bugangan.jpg","is_district":false},{"id":141,"district_id":13,"name":"KELURAHAN KARANGTEMPEL","latitude":-6.9920732627,"longitude":110.4362566612,"image":"Karangtempel.png","is_district":false},{"id":142,"district_id":13,"name":"KELURAHAN KARANGTURI","latitude":-6.9874879562,"longitude":110.4330152553,"image":"Karangturi.jpg","is_district":false},{"id":143,"district_id":13,"name":"KELURAHAN KEBONAGUNG","latitude":-6.9709052003,"longitude":110.4321633302,"image":"Kebonagung.png","is_district":false},{"id":144,"district_id":13,"name":"KELURAHAN KEMIJEN","latitude":-6.9594984558,"longitude":110.4387773982,"image":"Kemijen.jpg","is_district":false},{"id":145,"district_id":13,"name":"KELURAHAN MLATIBARU","latitude":-6.9646606815,"longitude":110.4382704008,"image":"Mlatibaru.png","is_district":false},{"id":146,"district_id":13,"name":"KELURAHAN MLATIHARJO","latitude":-6.965101112,"longitude":110.4405806215,"image":"Mlatiharjo.jpg","is_district":false},{"id":147,"district_id":13,"name":"KELURAHAN REJOMULYO","latitude":-6.9644597428,"longitude":110.4349753131,"image":"Rejomulyo.jpg","is_district":false},{"id":148,"district_id":13,"name":"KELURAHAN REJOSARI","latitude":-6.9839302231,"longitude":110.4401104646,"image":"Rejosari.jpg","is_district":false},{"id":149,"district_id":13,"name":"KELURAHAN SARIREJO","latitude":-6.9835089227,"longitude":110.4330509541,"image":"Sarirejo.jpg","is_district":false},{"id":150,"district_id":14,"name":"KELURAHAN BANDARHARJO","latitude":-6.9631167695,"longitude":110.4233290461,"image":"Bandarharjo.jpg","is_district":false},{"id":151,"district_id":14,"name":"KELURAHAN BULU LOR","latitude":-6.9746320351,"longitude":110.4051447168,"image":"Bulu_Lor.jpg","is_district":false},{"id":152,"district_id":14,"name":"KELURAHAN DADAPSARI","latitude":-6.9652602979,"longitude":110.4188585086,"image":"Dadapsari.jpg","is_district":false},{"id":153,"district_id":14,"name":"KELURAHAN KUNINGAN","latitude":-6.9650110193,"longitude":110.4156666515,"image":"Kuningan.jpg","is_district":false},{"id":154,"district_id":14,"name":"KELURAHAN PANGGUNG KIDUL","latitude":-6.96600122,"longitude":110.4061486883,"image":"Panggung_Kidul.jpg","is_district":false},{"id":155,"district_id":14,"name":"KELURAHAN PANGGUNG LOR","latitude":-6.9577471584,"longitude":110.4043729879,"image":"Panggung_Lor.jpg","is_district":false},{"id":156,"district_id":14,"name":"KELURAHAN PLOMBOKAN","latitude":-6.9745374449,"longitude":110.4085714995,"image":"Plombokan.jpg","is_district":false},{"id":157,"district_id":14,"name":"KELURAHAN PURWOSARI","latitude":-6.9692229577,"longitude":110.4130084323,"image":"purwosari_semarangutara.jpg","is_district":false},{"id":158,"district_id":14,"name":"KELURAHAN TANJUNG MAS","latitude":-6.962253274,"longitude":110.4305305122,"image":"tanjung_mas.jpg","is_district":false},{"id":159,"district_id":15,"name":"KELURAHAN BULUSAN","latitude":-7.0629511009,"longitude":110.4412734794,"image":"Bulusan.jpg","is_district":false},{"id":160,"district_id":15,"name":"KELURAHAN JANGLI","latitude":-7.0330590462,"longitude":110.442173831,"image":"jangli.jpg","is_district":false},{"id":161,"district_id":15,"name":"KELURAHAN KEDUNGMUNDU","latitude":-7.0238828257,"longitude":110.4614083552,"image":"kedungmundu.jpg","is_district":false},{"id":162,"district_id":15,"name":"KELURAHAN KRAMAS","latitude":-7.0678899886,"longitude":110.436008128,"image":"Kramas.jpg","is_district":false},{"id":163,"district_id":15,"name":"KELURAHAN MANGUNHARJO","latitude":-7.0447091076,"longitude":110.4606227066,"image":"mangunharjo.png","is_district":false},{"id":164,"district_id":15,"name":"KELURAHAN METESEH","latitude":-7.0565806636,"longitude":110.4647658986,"image":"Meteseh.png","is_district":false},{"id":165,"district_id":15,"name":"KELURAHAN ROWOSARI","latitude":-7.0711832473,"longitude":110.4740566222,"image":"rowosari.jpg","is_district":false},{"id":166,"district_id":15,"name":"KELURAHAN SAMBIROTO","latitude":-7.0305343373,"longitude":110.4590939338,"image":"Sambiroto.png","is_district":false},{"id":167,"district_id":15,"name":"KELURAHAN SENDANGGUWO","latitude":-7.0127604085,"longitude":110.4543414384,"image":"sendangguwo.jpg","is_district":false},{"id":168,"district_id":15,"name":"KELURAHAN SENDANGMULYO","latitude":-7.0511363593,"longitude":110.4801530955,"image":"sendangmulyo.jpg","is_district":false},{"id":169,"district_id":15,"name":"KELURAHAN TANDANG","latitude":-7.0205049733,"longitude":110.4562997617,"image":"tandang.png","is_district":false},{"id":170,"district_id":15,"name":"KELURAHAN TEMBALANG","latitude":-7.0595076765,"longitude":110.4391435536,"image":"tembalang.jpg","is_district":false},{"id":171,"district_id":16,"name":"KELURAHAN JERAKAH","latitude":-6.9830245015,"longitude":110.3638189314,"image":"jerakah.jpg","is_district":false},{"id":172,"district_id":16,"name":"KELURAHAN KARANGANYAR","latitude":-6.9756268749,"longitude":110.3320945555,"image":"karanganyar.png","is_district":false},{"id":173,"district_id":16,"name":"KELURAHAN MANGKANG KULON","latitude":-6.9728229691,"longitude":110.2979351154,"image":"mangkang_kulon.jpg","is_district":false},{"id":174,"district_id":16,"name":"KELURAHAN MANGKANG WETAN","latitude":-6.9698430471,"longitude":110.3059745541,"image":"mangkang_wetan.jpeg","is_district":false},{"id":175,"district_id":16,"name":"KELURAHAN MANGUNHARJO","latitude":-6.9572299046,"longitude":110.3130787112,"image":"mangunharjo_tugu.jpeg","is_district":false},{"id":176,"district_id":16,"name":"KELURAHAN RANDU GARUT","latitude":-6.9752365494,"longitude":110.3193828028,"image":"randu_garut.jpeg","is_district":false},{"id":177,"district_id":16,"name":"KELURAHAN TUGUREJO","latitude":-6.9781608733,"longitude":110.3529460991,"image":"tugurejo.jpg","is_district":false},{"id":178,"district_id":16,"name":"KECAMATAN TUGU","latitude":-6.9855063551,"longitude":110.3453942571,"image":"kec_tugu.jpg","is_district":true},{"id":179,"district_id":1,"name":"KECAMATAN BANYUMANIK","latitude":-7.0531846095,"longitude":110.4284156754,"image":"kec_banyumanik.jpg","is_district":true},{"id":180,"district_id":2,"name":"KECAMATAN CANDISARI","latitude":-7.0267293248,"longitude":110.4279120412,"image":"kec_candisari.png","is_district":true},{"id":181,"district_id":3,"name":"KECAMATAN GAJAH MUNGKUR","latitude":-7.0042778655,"longitude":110.4089510759,"image":"kec_gajahmungkur.jpg","is_district":true},{"id":182,"district_id":4,"name":"KECAMATAN GAYAMSARI","latitude":-6.9991978039,"longitude":110.4493291744,"image":"kec_gayamsari.jpeg","is_district":true},{"id":183,"district_id":5,"name":"KECAMATAN GENUK","latitude":-6.965297433,"longitude":110.4772336516,"image":"kec_genuk.jpeg","is_district":true},{"id":184,"district_id":6,"name":"KECAMATAN GUNUNG PATI","latitude":-7.1035271737,"longitude":110.3865072739,"image":"kec_gunungpati.png","is_district":true},{"id":185,"district_id":7,"name":"KECAMATAN MIJEN","latitude":-7.0764436767,"longitude":110.3090936393,"image":"kec_mijen.jpg","is_district":true},{"id":186,"district_id":8,"name":"KECAMATAN NGALIYAN","latitude":-6.9969008708,"longitude":110.3474121024,"image":"kec_ngaliyan.jpg","is_district":true},{"id":187,"district_id":9,"name":"KECAMATAN PEDURUNGAN","latitude":-7.0095891458,"longitude":110.4657934376,"image":"kec_pedurungan.jpg","is_district":true},{"id":188,"district_id":10,"name":"KECAMATAN SEMARANG BARAT","latitude":-6.9820983249,"longitude":110.3891980073,"image":"kec_semarang_barat.png","is_district":true},{"id":189,"district_id":11,"name":"KECAMATAN SEMARANG SELATAN","latitude":-7.0019590382,"longitude":110.437325043,"image":"kec_semarang_selatan.jpg","is_district":true},{"id":190,"district_id":12,"name":"KECAMATAN SEMARANG TENGAH","latitude":-6.9836808452,"longitude":110.419744255,"image":"kec_semarang_tengah.jpg","is_district":true},{"id":191,"district_id":13,"name":"KECAMATAN SEMARANG TIMUR","latitude":-6.986838745,"longitude":110.4396573585,"image":"kec_semarang_timur.jpeg","is_district":true},{"id":192,"district_id":14,"name":"KECAMATAN SEMARANG UTARA","latitude":-6.9654578971,"longitude":110.4070016996,"image":"kec_semarang_utara.jpg","is_district":true},{"id":193,"district_id":15,"name":"KECAMATAN TEMBALANG","latitude":-7.0598200261,"longitude":110.4475085876,"image":"kec_tembalang.jpg","is_district":true}]
+[
+    {
+        "id": 1,
+        "district_id": 1,
+        "name": "KELURAHAN GEDAWANG",
+        "latitude": -7.0826933871,
+        "longitude": 110.4276663931,
+        "image": "gedawang.jpg",
+        "is_district": false
+    },
+    {
+        "id": 2,
+        "district_id": 1,
+        "name": "KELURAHAN PUDAKPAYUNG",
+        "latitude": -7.1014905801,
+        "longitude": 110.4096021803,
+        "image": "pudakpayung.jpg",
+        "is_district": false
+    },
+    {
+        "id": 3,
+        "district_id": 1,
+        "name": "KELURAHAN JABUNGAN",
+        "latitude": -7.0839132587,
+        "longitude": 110.4487495245,
+        "image": "jabungan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 4,
+        "district_id": 1,
+        "name": "KELURAHAN PADANGSARI",
+        "latitude": -7.0758965001,
+        "longitude": 110.424300165,
+        "image": "padangsari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 5,
+        "district_id": 1,
+        "name": "KELURAHAN BANYUMANIK",
+        "latitude": -7.0739096956,
+        "longitude": 110.410972816,
+        "image": "banyumanik.jpg",
+        "is_district": false
+    },
+    {
+        "id": 6,
+        "district_id": 1,
+        "name": "KELURAHAN SRONDOL WETAN",
+        "latitude": -7.0636950455,
+        "longitude": 110.4172696372,
+        "image": "srondol_wetan.png",
+        "is_district": false
+    },
+    {
+        "id": 7,
+        "district_id": 1,
+        "name": "KELURAHAN PEDALANGAN",
+        "latitude": -7.0683513676,
+        "longitude": 110.425135909,
+        "image": "pedalangan.png",
+        "is_district": false
+    },
+    {
+        "id": 8,
+        "district_id": 1,
+        "name": "KELURAHAN SUMURBOTO",
+        "latitude": -7.0509750999,
+        "longitude": 110.4258122997,
+        "image": "sumurboto.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 9,
+        "district_id": 1,
+        "name": "KELURAHAN SRONDOL KULON",
+        "latitude": -7.0592788774,
+        "longitude": 110.4122458035,
+        "image": "srondol_kulon.png",
+        "is_district": false
+    },
+    {
+        "id": 10,
+        "district_id": 1,
+        "name": "KELURAHAN TINJOMOYO",
+        "latitude": -7.0316236585,
+        "longitude": 110.4167245752,
+        "image": "tinjomoyo.png",
+        "is_district": false
+    },
+    {
+        "id": 11,
+        "district_id": 1,
+        "name": "KELURAHAN NGESREP",
+        "latitude": -7.0323773756,
+        "longitude": 110.4182902673,
+        "image": "ngesrep.png",
+        "is_district": false
+    },
+    {
+        "id": 12,
+        "district_id": 2,
+        "name": "KELURAHAN CANDI",
+        "latitude": -7.0081075417,
+        "longitude": 110.4314074028,
+        "image": "candi.png",
+        "is_district": false
+    },
+    {
+        "id": 13,
+        "district_id": 2,
+        "name": "KELURAHAN JATINGALEH",
+        "latitude": -7.0309449777,
+        "longitude": 110.4193658799,
+        "image": "jatingaleh.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 14,
+        "district_id": 2,
+        "name": "KELURAHAN JOMBLANG",
+        "latitude": -7.0127491439,
+        "longitude": 110.4404185673,
+        "image": "jomblang.png",
+        "is_district": false
+    },
+    {
+        "id": 15,
+        "district_id": 2,
+        "name": "KELURAHAN KALIWIRU",
+        "latitude": -7.0182283532,
+        "longitude": 110.4250951034,
+        "image": "kaliwiru.png",
+        "is_district": false
+    },
+    {
+        "id": 16,
+        "district_id": 2,
+        "name": "KELURAHAN KARANGANYAR GUNUNG",
+        "latitude": -7.0162153436,
+        "longitude": 110.4324075916,
+        "image": "karanganyar_gunung.png",
+        "is_district": false
+    },
+    {
+        "id": 17,
+        "district_id": 2,
+        "name": "KELURAHAN TEGALSARI",
+        "latitude": -7.0033665243,
+        "longitude": 110.4229045044,
+        "image": "tegalsari.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 18,
+        "district_id": 2,
+        "name": "KELURAHAN WONOTINGAL",
+        "latitude": -7.0139967173,
+        "longitude": 110.4222940139,
+        "image": "wonotingal.jpg",
+        "is_district": false
+    },
+    {
+        "id": 19,
+        "district_id": 3,
+        "name": "KELURAHAN BENDAN DUWUR",
+        "latitude": -7.0198998324,
+        "longitude": 110.3951183785,
+        "image": "bendan_duwur.png",
+        "is_district": false
+    },
+    {
+        "id": 20,
+        "district_id": 3,
+        "name": "KELURAHAN BENDAN NGISOR",
+        "latitude": -7.0108230883,
+        "longitude": 110.3965427702,
+        "image": "bendan_ngisor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 21,
+        "district_id": 3,
+        "name": "KELURAHAN BENDUNGAN",
+        "latitude": -6.997087603,
+        "longitude": 110.4070389902,
+        "image": "bendungan.png",
+        "is_district": false
+    },
+    {
+        "id": 22,
+        "district_id": 3,
+        "name": "KELURAHAN GAJAHMUNGKUR",
+        "latitude": -7.0057817391,
+        "longitude": 110.4136015317,
+        "image": "gajahmungkur.png",
+        "is_district": false
+    },
+    {
+        "id": 23,
+        "district_id": 3,
+        "name": "KELURAHAN KARANGREJO",
+        "latitude": -7.027841307,
+        "longitude": 110.4126200821,
+        "image": "karangrejo.png",
+        "is_district": false
+    },
+    {
+        "id": 24,
+        "district_id": 3,
+        "name": "KELURAHAN LEMPONGSARI",
+        "latitude": -6.9975998259,
+        "longitude": 110.4134172336,
+        "image": "lempongsari.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 25,
+        "district_id": 3,
+        "name": "KELURAHAN PETOMPON",
+        "latitude": -7.0015907111,
+        "longitude": 110.4046041442,
+        "image": "petompon.png",
+        "is_district": false
+    },
+    {
+        "id": 26,
+        "district_id": 3,
+        "name": "KELURAHAN SAMPANGAN",
+        "latitude": -7.0137706868,
+        "longitude": 110.3902450929,
+        "image": "sampangan.png",
+        "is_district": false
+    },
+    {
+        "id": 27,
+        "district_id": 4,
+        "name": "KELURAHAN GAYAMSARI",
+        "latitude": -7.0001886686,
+        "longitude": 110.4488301458,
+        "image": "gayamsari.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 28,
+        "district_id": 4,
+        "name": "KELURAHAN KALIGAWE",
+        "latitude": -6.9643902682,
+        "longitude": 110.4489594254,
+        "image": "kaligawe.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 29,
+        "district_id": 4,
+        "name": "KELURAHAN PANDEAN LAMPER",
+        "latitude": -6.9919370867,
+        "longitude": 110.4452505179,
+        "image": "pandean_lamper.jpg",
+        "is_district": false
+    },
+    {
+        "id": 30,
+        "district_id": 4,
+        "name": "KELURAHAN SAMBIREJO",
+        "latitude": -6.986561557,
+        "longitude": 110.4425103028,
+        "image": "sambirejo.png",
+        "is_district": false
+    },
+    {
+        "id": 31,
+        "district_id": 4,
+        "name": "KELURAHAN SAWAH BESAR",
+        "latitude": -6.9729460715,
+        "longitude": 110.4465376378,
+        "image": "sawah_besar.png",
+        "is_district": false
+    },
+    {
+        "id": 32,
+        "district_id": 4,
+        "name": "KELURAHAN SIWALAN",
+        "latitude": -6.9815914075,
+        "longitude": 110.4504872262,
+        "image": "siwalan.png",
+        "is_district": false
+    },
+    {
+        "id": 33,
+        "district_id": 4,
+        "name": "KELURAHAN TAMBAKREJO",
+        "latitude": -6.9571456734,
+        "longitude": 110.4421539105,
+        "image": "tambakrejo.png",
+        "is_district": false
+    },
+    {
+        "id": 34,
+        "district_id": 5,
+        "name": "KELURAHAN BANGETAYU KULON",
+        "latitude": -6.9808806453,
+        "longitude": 110.4771337025,
+        "image": "bangetayu_kulon.png",
+        "is_district": false
+    },
+    {
+        "id": 35,
+        "district_id": 5,
+        "name": "KELURAHAN BANGETAYU WETAN",
+        "latitude": -6.9828031828,
+        "longitude": 110.477011869,
+        "image": "bangetayu_wetan.png",
+        "is_district": false
+    },
+    {
+        "id": 36,
+        "district_id": 5,
+        "name": "KELURAHAN BANJARDOWO",
+        "latitude": -6.954864275,
+        "longitude": 110.4855307133,
+        "image": "banjardowo.png",
+        "is_district": false
+    },
+    {
+        "id": 37,
+        "district_id": 5,
+        "name": "KELURAHAN GEBANGSARI",
+        "latitude": -6.9696406928,
+        "longitude": 110.4672095706,
+        "image": "gebangsari.png",
+        "is_district": false
+    },
+    {
+        "id": 38,
+        "district_id": 5,
+        "name": "KELURAHAN GENUKSARI",
+        "latitude": -6.9534160934,
+        "longitude": 110.4797545648,
+        "image": "genuksari.png",
+        "is_district": false
+    },
+    {
+        "id": 39,
+        "district_id": 5,
+        "name": "KELURAHAN KARANGROTO",
+        "latitude": -6.9580460685,
+        "longitude": 110.4941210896,
+        "image": "karangroto.png",
+        "is_district": false
+    },
+    {
+        "id": 40,
+        "district_id": 5,
+        "name": "KELURAHAN KUDU",
+        "latitude": -6.9672485819,
+        "longitude": 110.4988531487,
+        "image": "kudu.png",
+        "is_district": false
+    },
+    {
+        "id": 41,
+        "district_id": 5,
+        "name": "KELURAHAN MUKTIHARJO LOR",
+        "latitude": -6.9671417136,
+        "longitude": 110.4568726966,
+        "image": "muktiharjo_lor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 42,
+        "district_id": 5,
+        "name": "KELURAHAN PENGGARON LOR",
+        "latitude": -6.974918815,
+        "longitude": 110.498072102,
+        "image": "penggaron_lor.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 43,
+        "district_id": 5,
+        "name": "KELURAHAN SEMBUNGHARJO",
+        "latitude": -6.9767321262,
+        "longitude": 110.490073665,
+        "image": "sembungharjo.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 44,
+        "district_id": 5,
+        "name": "KELURAHAN TERBOYO KULON",
+        "latitude": -6.952682998,
+        "longitude": 110.4518171306,
+        "image": "terboyo_kulon.jpg",
+        "is_district": false
+    },
+    {
+        "id": 45,
+        "district_id": 5,
+        "name": "KELURAHAN TERBOYO WETAN",
+        "latitude": -6.9513669882,
+        "longitude": 110.4666600772,
+        "image": "terboyo_wetan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 46,
+        "district_id": 5,
+        "name": "KELURAHAN TRIMULYO",
+        "latitude": -6.950920655,
+        "longitude": 110.4784889092,
+        "image": "trimulyo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 47,
+        "district_id": 6,
+        "name": "KELURAHAN CEPOKO",
+        "latitude": -7.0725296467,
+        "longitude": 110.3517722981,
+        "image": "cepoko.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 48,
+        "district_id": 6,
+        "name": "KELURAHAN GUNUNGPATI",
+        "latitude": -7.0876443747,
+        "longitude": 110.3615707757,
+        "image": "gunungpati.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 49,
+        "district_id": 6,
+        "name": "KELURAHAN JATIREJO",
+        "latitude": -7.060535839,
+        "longitude": 110.3481194582,
+        "image": "jatirejo.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 50,
+        "district_id": 6,
+        "name": "KELURAHAN KALISEGORO",
+        "latitude": -7.0596123786,
+        "longitude": 110.3831351927,
+        "image": "kalisegoro.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 51,
+        "district_id": 6,
+        "name": "KELURAHAN KANDRI",
+        "latitude": -7.058697862,
+        "longitude": 110.35740322,
+        "image": "kandri.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 52,
+        "district_id": 6,
+        "name": "KELURAHAN MANGUNSARI",
+        "latitude": -7.0808147098,
+        "longitude": 110.3774656298,
+        "image": "mangunsari.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 53,
+        "district_id": 6,
+        "name": "KELURAHAN NGIJO",
+        "latitude": -7.0709352739,
+        "longitude": 110.3835312744,
+        "image": "ngijo.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 54,
+        "district_id": 6,
+        "name": "KELURAHAN NONGKOSAWIT",
+        "latitude": -7.0672119663,
+        "longitude": 110.3654708123,
+        "image": "nongkosawit.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 55,
+        "district_id": 6,
+        "name": "KELURAHAN PAKINTELAN",
+        "latitude": -7.0889898566,
+        "longitude": 110.3956720567,
+        "image": "pakintelan.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 56,
+        "district_id": 6,
+        "name": "KELURAHAN PATEMON",
+        "latitude": -7.0680915341,
+        "longitude": 110.3995836059,
+        "image": "patemon.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 57,
+        "district_id": 6,
+        "name": "KELURAHAN PLALANGAN",
+        "latitude": -7.0870043917,
+        "longitude": 110.3674636028,
+        "image": "plalangan.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 58,
+        "district_id": 6,
+        "name": "KELURAHAN PONGANGAN",
+        "latitude": -7.0590132939,
+        "longitude": 110.3645970773,
+        "image": "pongangan.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 59,
+        "district_id": 6,
+        "name": "KELURAHAN SADENG",
+        "latitude": -7.0392988015,
+        "longitude": 110.365678716,
+        "image": "sadeng.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 60,
+        "district_id": 6,
+        "name": "KELURAHAN SEKARAN",
+        "latitude": -7.0521170324,
+        "longitude": 110.3939899423,
+        "image": "sekaran.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 61,
+        "district_id": 6,
+        "name": "KELURAHAN SUKOREJO",
+        "latitude": -7.0262059652,
+        "longitude": 110.3798467071,
+        "image": "sukorejo.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 62,
+        "district_id": 6,
+        "name": "KELURAHAN SUMURREJO",
+        "latitude": -7.107915424,
+        "longitude": 110.3873816952,
+        "image": "sumurrejo.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 63,
+        "district_id": 7,
+        "name": "KELURAHAN BUBAKAN",
+        "latitude": -7.0925712909,
+        "longitude": 110.3203921775,
+        "image": "bubakan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 64,
+        "district_id": 7,
+        "name": "KELURAHAN CANGKIRAN",
+        "latitude": -7.088173802,
+        "longitude": 110.3072463213,
+        "image": "cangkiran.jpg",
+        "is_district": false
+    },
+    {
+        "id": 65,
+        "district_id": 7,
+        "name": "KELURAHAN JATIBARANG",
+        "latitude": -7.0533637297,
+        "longitude": 110.3337145805,
+        "image": "jatibarang.jpg",
+        "is_district": false
+    },
+    {
+        "id": 66,
+        "district_id": 7,
+        "name": "KELURAHAN JATISARI",
+        "latitude": -7.0776831247,
+        "longitude": 110.3083933071,
+        "image": "jatisari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 67,
+        "district_id": 7,
+        "name": "KELURAHAN KARANGMALANG",
+        "latitude": -7.0958064861,
+        "longitude": 110.3336107135,
+        "image": "karangmalang.jpg",
+        "is_district": false
+    },
+    {
+        "id": 68,
+        "district_id": 7,
+        "name": "KELURAHAN KEDUNGPANI",
+        "latitude": -7.0409369871,
+        "longitude": 110.337932174,
+        "image": "kedungpani.jpg",
+        "is_district": false
+    },
+    {
+        "id": 69,
+        "district_id": 7,
+        "name": "KELURAHAN MIJEN",
+        "latitude": -7.0528147811,
+        "longitude": 110.3185013227,
+        "image": "mijen.jpg",
+        "is_district": false
+    },
+    {
+        "id": 70,
+        "district_id": 7,
+        "name": "KELURAHAN NGADIRGO",
+        "latitude": -7.0307100461,
+        "longitude": 110.3141562218,
+        "image": "ngadirgo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 71,
+        "district_id": 7,
+        "name": "KELURAHAN PESANTREN",
+        "latitude": -7.0216669927,
+        "longitude": 110.3104015283,
+        "image": "pesantren.jpg",
+        "is_district": false
+    },
+    {
+        "id": 72,
+        "district_id": 7,
+        "name": "KELURAHAN POLAMAN",
+        "latitude": -7.093726403,
+        "longitude": 110.3341773836,
+        "image": "polaman.jpg",
+        "is_district": false
+    },
+    {
+        "id": 73,
+        "district_id": 7,
+        "name": "KELURAHAN PURWOSARI",
+        "latitude": -7.0838818229,
+        "longitude": 110.3342351491,
+        "image": "purwosari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 74,
+        "district_id": 7,
+        "name": "KELURAHAN TAMBANGAN",
+        "latitude": -7.0811579063,
+        "longitude": 110.3093965769,
+        "image": "tambangan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 75,
+        "district_id": 7,
+        "name": "KELURAHAN WONOLOPO",
+        "latitude": -7.0560927118,
+        "longitude": 110.3101389459,
+        "image": "wonolopo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 76,
+        "district_id": 7,
+        "name": "KELURAHAN WONOPLUMBON",
+        "latitude": -7.0386950807,
+        "longitude": 110.2918667302,
+        "image": "wonoplumbon.jpg",
+        "is_district": false
+    },
+    {
+        "id": 77,
+        "district_id": 8,
+        "name": "KELURAHAN BAMBANKEREP",
+        "latitude": -7.0110463085,
+        "longitude": 110.3636514929,
+        "image": "bambankerep.jpg",
+        "is_district": false
+    },
+    {
+        "id": 78,
+        "district_id": 8,
+        "name": "KELURAHAN BRINGIN",
+        "latitude": -6.9966754807,
+        "longitude": 110.332023395,
+        "image": "bringin.jpg",
+        "is_district": false
+    },
+    {
+        "id": 79,
+        "district_id": 8,
+        "name": "KELURAHAN GONDORIYO",
+        "latitude": -6.9949392663,
+        "longitude": 110.3295139917,
+        "image": "gondoriyo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 80,
+        "district_id": 8,
+        "name": "KELURAHAN KALIPANCUR",
+        "latitude": -7.0077271341,
+        "longitude": 110.3779506872,
+        "image": "kalipancur.jpg",
+        "is_district": false
+    },
+    {
+        "id": 81,
+        "district_id": 8,
+        "name": "KELURAHAN NGALIYAN",
+        "latitude": -6.9965524671,
+        "longitude": 110.3481425112,
+        "image": "ngaliyan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 82,
+        "district_id": 8,
+        "name": "KELURAHAN PODOREJO",
+        "latitude": -7.0083183447,
+        "longitude": 110.2913756952,
+        "image": "podorejo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 83,
+        "district_id": 8,
+        "name": "KELURAHAN PURWOYOSO",
+        "latitude": -6.9886035717,
+        "longitude": 110.364948838,
+        "image": "purwoyoso.jpg",
+        "is_district": false
+    },
+    {
+        "id": 84,
+        "district_id": 8,
+        "name": "KELURAHAN TAMBAKAJI",
+        "latitude": -6.9829089241,
+        "longitude": 110.35134061,
+        "image": "tambakaji.jpg",
+        "is_district": false
+    },
+    {
+        "id": 85,
+        "district_id": 8,
+        "name": "KELURAHAN WONOSARI",
+        "latitude": -6.9749007849,
+        "longitude": 110.3155727845,
+        "image": "wonosari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 86,
+        "district_id": 8,
+        "name": "KELURAHAN WATES",
+        "latitude": -7.0168646908,
+        "longitude": 110.3381897085,
+        "image": "wates.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 87,
+        "district_id": 9,
+        "name": "KELURAHAN GEMAH",
+        "latitude": -7.0090492841,
+        "longitude": 110.4644943999,
+        "image": "gemah.jpg",
+        "is_district": false
+    },
+    {
+        "id": 88,
+        "district_id": 9,
+        "name": "KELURAHAN KALICARI",
+        "latitude": -6.9967123413,
+        "longitude": 110.4553415321,
+        "image": "kalicari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 89,
+        "district_id": 9,
+        "name": "KELURAHAN MUKTIHARJO KIDUL",
+        "latitude": -6.9781561157,
+        "longitude": 110.4584930803,
+        "image": "muktiharjo_kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 90,
+        "district_id": 9,
+        "name": "KELURAHAN PALEBON",
+        "latitude": -7.0053194115,
+        "longitude": 110.464567603,
+        "image": "palebon.jpg",
+        "is_district": false
+    },
+    {
+        "id": 91,
+        "district_id": 9,
+        "name": "KELURAHAN PEDURUNGAN KIDUL",
+        "latitude": -7.0164750749,
+        "longitude": 110.4725263703,
+        "image": "pedurungan_kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 92,
+        "district_id": 9,
+        "name": "KELURAHAN PEDURUNGAN LOR",
+        "latitude": -7.0075233086,
+        "longitude": 110.4871538688,
+        "image": "pedurungan_lor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 93,
+        "district_id": 9,
+        "name": "KELURAHAN PEDURUNGAN TENGAH",
+        "latitude": -7.0099417652,
+        "longitude": 110.4723691466,
+        "image": "pedurungan_tengah.jpg",
+        "is_district": false
+    },
+    {
+        "id": 94,
+        "district_id": 9,
+        "name": "KELURAHAN PENGGARON KIDUL",
+        "latitude": -7.0175038436,
+        "longitude": 110.4890067184,
+        "image": "penggaron_kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 95,
+        "district_id": 9,
+        "name": "KELURAHAN PLAMONGANSARI",
+        "latitude": -7.0237651948,
+        "longitude": 110.485895456,
+        "image": "palmongansari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 96,
+        "district_id": 9,
+        "name": "KELURAHAN TLOGOMULYO",
+        "latitude": -6.9986736674,
+        "longitude": 110.4799011726,
+        "image": "tlogomulyo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 97,
+        "district_id": 9,
+        "name": "KELURAHAN TLOGOSARI KULON",
+        "latitude": -6.9895211322,
+        "longitude": 110.4581214854,
+        "image": "tlogosari_kulon.jpg",
+        "is_district": false
+    },
+    {
+        "id": 98,
+        "district_id": 9,
+        "name": "KELURAHAN TLOGOSARI WETAN",
+        "latitude": -6.9924462354,
+        "longitude": 110.4688695101,
+        "image": "tlogosari_wetan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 99,
+        "district_id": 10,
+        "name": "KELURAHAN BOJONGSALAMAN",
+        "latitude": -6.9850525159,
+        "longitude": 110.3978760559,
+        "image": "bojongsalaman.jpg",
+        "is_district": false
+    },
+    {
+        "id": 100,
+        "district_id": 10,
+        "name": "KELURAHAN BONGSARI",
+        "latitude": -6.9924325894,
+        "longitude": 110.3985707931,
+        "image": "bongsari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 101,
+        "district_id": 10,
+        "name": "KELURAHAN CABEAN",
+        "latitude": -6.9824331257,
+        "longitude": 110.3975806746,
+        "image": "cabean.jpg",
+        "is_district": false
+    },
+    {
+        "id": 102,
+        "district_id": 10,
+        "name": "KELURAHAN GISIKDRONO",
+        "latitude": -6.9879104388,
+        "longitude": 110.3896083146,
+        "image": "gisikdrono.jpg",
+        "is_district": false
+    },
+    {
+        "id": 103,
+        "district_id": 10,
+        "name": "KELURAHAN KALIBANTENG KIDUL",
+        "latitude": -6.9911725913,
+        "longitude": 110.3830020721,
+        "image": "kalibanteng_kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 104,
+        "district_id": 10,
+        "name": "KELURAHAN KALIBANTENG KULON",
+        "latitude": -6.9865687164,
+        "longitude": 110.3803014346,
+        "image": "kalibanteng_kulon.jpg",
+        "is_district": false
+    },
+    {
+        "id": 105,
+        "district_id": 10,
+        "name": "KELURAHAN KARANGAYU",
+        "latitude": -6.9804284645,
+        "longitude": 110.3911067139,
+        "image": "karangayu.jpg",
+        "is_district": false
+    },
+    {
+        "id": 106,
+        "district_id": 10,
+        "name": "KELURAHAN KEMBANGARUM",
+        "latitude": -6.9979809012,
+        "longitude": 110.3790312629,
+        "image": "kembangarum.jpg",
+        "is_district": false
+    },
+    {
+        "id": 107,
+        "district_id": 10,
+        "name": "KELURAHAN KRAPYAK",
+        "latitude": -6.9855452636,
+        "longitude": 110.3665912476,
+        "image": "krapyak.jpg",
+        "is_district": false
+    },
+    {
+        "id": 108,
+        "district_id": 10,
+        "name": "KELURAHAN KROBOKAN",
+        "latitude": -6.9760244467,
+        "longitude": 110.3986089509,
+        "image": "krobokan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 109,
+        "district_id": 10,
+        "name": "KELURAHAN MANYARAN",
+        "latitude": -7.0042076223,
+        "longitude": 110.3912798191,
+        "image": "manyaran.jpg",
+        "is_district": false
+    },
+    {
+        "id": 110,
+        "district_id": 10,
+        "name": "KELURAHAN NGEMPLAKSIMONGAN",
+        "latitude": -7.0028196874,
+        "longitude": 110.3950191682,
+        "image": "ngemplaksimongan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 111,
+        "district_id": 10,
+        "name": "KELURAHAN SALAMANMLOYO",
+        "latitude": -6.9843091823,
+        "longitude": 110.3925007324,
+        "image": "salamanmloyo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 112,
+        "district_id": 10,
+        "name": "KELURAHAN TAMBAKHARJO",
+        "latitude": -6.9782705016,
+        "longitude": 110.3659643191,
+        "image": "tambakharjo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 113,
+        "district_id": 10,
+        "name": "KELURAHAN TAWANGMAS",
+        "latitude": -6.970543392,
+        "longitude": 110.3949955258,
+        "image": "tawangmas.jpg",
+        "is_district": false
+    },
+    {
+        "id": 114,
+        "district_id": 10,
+        "name": "KELURAHAN TAWANGSARI",
+        "latitude": -6.9728733522,
+        "longitude": 110.3840376953,
+        "image": "tawangsari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 115,
+        "district_id": 11,
+        "name": "KELURAHAN BARUSARI",
+        "latitude": -6.9910727843,
+        "longitude": 110.4039912396,
+        "image": "barusari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 116,
+        "district_id": 11,
+        "name": "KELURAHAN BULUSTALAN",
+        "latitude": -6.9835127241,
+        "longitude": 110.4038846353,
+        "image": "bulustalan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 117,
+        "district_id": 11,
+        "name": "KELURAHAN LAMPER KIDUL",
+        "latitude": -7.0075289157,
+        "longitude": 110.4393013208,
+        "image": "lamper_kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 118,
+        "district_id": 11,
+        "name": "KELURAHAN LAMPER LOR",
+        "latitude": -7.0009734055,
+        "longitude": 110.4395592321,
+        "image": "Lamper_Lor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 119,
+        "district_id": 11,
+        "name": "KELURAHAN LAMPER TENGAH",
+        "latitude": -7.006760155,
+        "longitude": 110.4463641891,
+        "image": "Lamper_Tengah.jpg",
+        "is_district": false
+    },
+    {
+        "id": 120,
+        "district_id": 11,
+        "name": "KELURAHAN MUGASSARI",
+        "latitude": -6.9914135317,
+        "longitude": 110.4162744275,
+        "image": "Mugassari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 121,
+        "district_id": 11,
+        "name": "KELURAHAN PETERONGAN",
+        "latitude": -6.9989364584,
+        "longitude": 110.4358536784,
+        "image": "Peterongan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 122,
+        "district_id": 11,
+        "name": "KELURAHAN PLEBURAN",
+        "latitude": -6.9995887672,
+        "longitude": 110.4242518711,
+        "image": "Pleburan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 123,
+        "district_id": 11,
+        "name": "KELURAHAN RANDUSARI",
+        "latitude": -6.9868467056,
+        "longitude": 110.4116986751,
+        "image": "Randusari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 124,
+        "district_id": 11,
+        "name": "KELURAHAN WONODRI",
+        "latitude": -7.0017390401,
+        "longitude": 110.4312894733,
+        "image": "Wonodri.jpg",
+        "is_district": false
+    },
+    {
+        "id": 125,
+        "district_id": 12,
+        "name": "KELURAHAN BANGUNHARJO",
+        "latitude": -6.9746466421,
+        "longitude": 110.4218546791,
+        "image": "Bangunharjo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 126,
+        "district_id": 12,
+        "name": "KELURAHAN BRUMBUNGAN",
+        "latitude": -6.9835419614,
+        "longitude": 110.426776026,
+        "image": "Brumbungan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 127,
+        "district_id": 12,
+        "name": "KELURAHAN GABAHAN",
+        "latitude": -6.9808528031,
+        "longitude": 110.4276101125,
+        "image": "Gabahan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 128,
+        "district_id": 12,
+        "name": "KELURAHAN JAGALAN",
+        "latitude": -7.5661315734,
+        "longitude": 110.8452792303,
+        "image": "Jagalan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 129,
+        "district_id": 12,
+        "name": "KELURAHAN KARANG KIDUL",
+        "latitude": -6.9899980138,
+        "longitude": 110.4254607766,
+        "image": "Karang_Kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 130,
+        "district_id": 12,
+        "name": "KELURAHAN KAUMAN",
+        "latitude": -6.9744370048,
+        "longitude": 110.4233093429,
+        "image": "Kauman.jpg",
+        "is_district": false
+    },
+    {
+        "id": 131,
+        "district_id": 12,
+        "name": "KELURAHAN KEMBANGSARI",
+        "latitude": -6.9800009625,
+        "longitude": 110.4177006689,
+        "image": "Kembangsari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 132,
+        "district_id": 12,
+        "name": "KELURAHAN KRANGGAN",
+        "latitude": -6.9773476867,
+        "longitude": 110.4275546198,
+        "image": "Kranggan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 133,
+        "district_id": 12,
+        "name": "KELURAHAN MIROTO",
+        "latitude": -6.9834359292,
+        "longitude": 110.4199046071,
+        "image": "Miroto.jpg",
+        "is_district": false
+    },
+    {
+        "id": 134,
+        "district_id": 12,
+        "name": "KELURAHAN PANDANSARI",
+        "latitude": -6.9732490771,
+        "longitude": 110.4186816213,
+        "image": "Pandansari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 135,
+        "district_id": 12,
+        "name": "KELURAHAN PEKUNDEN",
+        "latitude": -6.9876800023,
+        "longitude": 110.4216874697,
+        "image": "Pekunden.jpg",
+        "is_district": false
+    },
+    {
+        "id": 136,
+        "district_id": 12,
+        "name": "KELURAHAN PINDRIKAN KIDUL",
+        "latitude": -6.9812935097,
+        "longitude": 110.4091103718,
+        "image": "Pindrikan_Kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 137,
+        "district_id": 12,
+        "name": "KELURAHAN PINDRIKAN LOR",
+        "latitude": -6.9781650717,
+        "longitude": 110.4090598419,
+        "image": "Pindrikan_Lor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 138,
+        "district_id": 12,
+        "name": "KELURAHAN PURWODINATAN",
+        "latitude": -6.9714614673,
+        "longitude": 110.4264057182,
+        "image": "Purwodinatan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 139,
+        "district_id": 12,
+        "name": "KELURAHAN SEKAYU",
+        "latitude": -6.9805923944,
+        "longitude": 110.4142722875,
+        "image": "Sekayu.jpg",
+        "is_district": false
+    },
+    {
+        "id": 140,
+        "district_id": 13,
+        "name": "KELURAHAN BUGANGAN",
+        "latitude": -6.9730690888,
+        "longitude": 110.438153583,
+        "image": "Bugangan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 141,
+        "district_id": 13,
+        "name": "KELURAHAN KARANGTEMPEL",
+        "latitude": -6.9920732627,
+        "longitude": 110.4362566612,
+        "image": "Karangtempel.png",
+        "is_district": false
+    },
+    {
+        "id": 142,
+        "district_id": 13,
+        "name": "KELURAHAN KARANGTURI",
+        "latitude": -6.9874879562,
+        "longitude": 110.4330152553,
+        "image": "Karangturi.jpg",
+        "is_district": false
+    },
+    {
+        "id": 143,
+        "district_id": 13,
+        "name": "KELURAHAN KEBONAGUNG",
+        "latitude": -6.9709052003,
+        "longitude": 110.4321633302,
+        "image": "Kebonagung.png",
+        "is_district": false
+    },
+    {
+        "id": 144,
+        "district_id": 13,
+        "name": "KELURAHAN KEMIJEN",
+        "latitude": -6.9594984558,
+        "longitude": 110.4387773982,
+        "image": "Kemijen.jpg",
+        "is_district": false
+    },
+    {
+        "id": 145,
+        "district_id": 13,
+        "name": "KELURAHAN MLATIBARU",
+        "latitude": -6.9646606815,
+        "longitude": 110.4382704008,
+        "image": "Mlatibaru.png",
+        "is_district": false
+    },
+    {
+        "id": 146,
+        "district_id": 13,
+        "name": "KELURAHAN MLATIHARJO",
+        "latitude": -6.965101112,
+        "longitude": 110.4405806215,
+        "image": "Mlatiharjo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 147,
+        "district_id": 13,
+        "name": "KELURAHAN REJOMULYO",
+        "latitude": -6.9644597428,
+        "longitude": 110.4349753131,
+        "image": "Rejomulyo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 148,
+        "district_id": 13,
+        "name": "KELURAHAN REJOSARI",
+        "latitude": -6.9839302231,
+        "longitude": 110.4401104646,
+        "image": "Rejosari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 149,
+        "district_id": 13,
+        "name": "KELURAHAN SARIREJO",
+        "latitude": -6.9835089227,
+        "longitude": 110.4330509541,
+        "image": "Sarirejo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 150,
+        "district_id": 14,
+        "name": "KELURAHAN BANDARHARJO",
+        "latitude": -6.9631167695,
+        "longitude": 110.4233290461,
+        "image": "Bandarharjo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 151,
+        "district_id": 14,
+        "name": "KELURAHAN BULU LOR",
+        "latitude": -6.9746320351,
+        "longitude": 110.4051447168,
+        "image": "Bulu_Lor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 152,
+        "district_id": 14,
+        "name": "KELURAHAN DADAPSARI",
+        "latitude": -6.9652602979,
+        "longitude": 110.4188585086,
+        "image": "Dadapsari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 153,
+        "district_id": 14,
+        "name": "KELURAHAN KUNINGAN",
+        "latitude": -6.9650110193,
+        "longitude": 110.4156666515,
+        "image": "Kuningan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 154,
+        "district_id": 14,
+        "name": "KELURAHAN PANGGUNG KIDUL",
+        "latitude": -6.96600122,
+        "longitude": 110.4061486883,
+        "image": "Panggung_Kidul.jpg",
+        "is_district": false
+    },
+    {
+        "id": 155,
+        "district_id": 14,
+        "name": "KELURAHAN PANGGUNG LOR",
+        "latitude": -6.9577471584,
+        "longitude": 110.4043729879,
+        "image": "Panggung_Lor.jpg",
+        "is_district": false
+    },
+    {
+        "id": 156,
+        "district_id": 14,
+        "name": "KELURAHAN PLOMBOKAN",
+        "latitude": -6.9745374449,
+        "longitude": 110.4085714995,
+        "image": "Plombokan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 157,
+        "district_id": 14,
+        "name": "KELURAHAN PURWOSARI",
+        "latitude": -6.9692229577,
+        "longitude": 110.4130084323,
+        "image": "purwosari_semarangutara.jpg",
+        "is_district": false
+    },
+    {
+        "id": 158,
+        "district_id": 14,
+        "name": "KELURAHAN TANJUNG MAS",
+        "latitude": -6.962253274,
+        "longitude": 110.4305305122,
+        "image": "tanjung_mas.jpg",
+        "is_district": false
+    },
+    {
+        "id": 159,
+        "district_id": 15,
+        "name": "KELURAHAN BULUSAN",
+        "latitude": -7.0629511009,
+        "longitude": 110.4412734794,
+        "image": "Bulusan.jpg",
+        "is_district": false
+    },
+    {
+        "id": 160,
+        "district_id": 15,
+        "name": "KELURAHAN JANGLI",
+        "latitude": -7.0330590462,
+        "longitude": 110.442173831,
+        "image": "jangli.jpg",
+        "is_district": false
+    },
+    {
+        "id": 161,
+        "district_id": 15,
+        "name": "KELURAHAN KEDUNGMUNDU",
+        "latitude": -7.0238828257,
+        "longitude": 110.4614083552,
+        "image": "kedungmundu.jpg",
+        "is_district": false
+    },
+    {
+        "id": 162,
+        "district_id": 15,
+        "name": "KELURAHAN KRAMAS",
+        "latitude": -7.0678899886,
+        "longitude": 110.436008128,
+        "image": "Kramas.jpg",
+        "is_district": false
+    },
+    {
+        "id": 163,
+        "district_id": 15,
+        "name": "KELURAHAN MANGUNHARJO",
+        "latitude": -7.0447091076,
+        "longitude": 110.4606227066,
+        "image": "mangunharjo.png",
+        "is_district": false
+    },
+    {
+        "id": 164,
+        "district_id": 15,
+        "name": "KELURAHAN METESEH",
+        "latitude": -7.0565806636,
+        "longitude": 110.4647658986,
+        "image": "Meteseh.png",
+        "is_district": false
+    },
+    {
+        "id": 165,
+        "district_id": 15,
+        "name": "KELURAHAN ROWOSARI",
+        "latitude": -7.0711832473,
+        "longitude": 110.4740566222,
+        "image": "rowosari.jpg",
+        "is_district": false
+    },
+    {
+        "id": 166,
+        "district_id": 15,
+        "name": "KELURAHAN SAMBIROTO",
+        "latitude": -7.0305343373,
+        "longitude": 110.4590939338,
+        "image": "Sambiroto.png",
+        "is_district": false
+    },
+    {
+        "id": 167,
+        "district_id": 15,
+        "name": "KELURAHAN SENDANGGUWO",
+        "latitude": -7.0127604085,
+        "longitude": 110.4543414384,
+        "image": "sendangguwo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 168,
+        "district_id": 15,
+        "name": "KELURAHAN SENDANGMULYO",
+        "latitude": -7.0511363593,
+        "longitude": 110.4801530955,
+        "image": "sendangmulyo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 169,
+        "district_id": 15,
+        "name": "KELURAHAN TANDANG",
+        "latitude": -7.0205049733,
+        "longitude": 110.4562997617,
+        "image": "tandang.png",
+        "is_district": false
+    },
+    {
+        "id": 170,
+        "district_id": 15,
+        "name": "KELURAHAN TEMBALANG",
+        "latitude": -7.0595076765,
+        "longitude": 110.4391435536,
+        "image": "tembalang.jpg",
+        "is_district": false
+    },
+    {
+        "id": 171,
+        "district_id": 16,
+        "name": "KELURAHAN JERAKAH",
+        "latitude": -6.9830245015,
+        "longitude": 110.3638189314,
+        "image": "jerakah.jpg",
+        "is_district": false
+    },
+    {
+        "id": 172,
+        "district_id": 16,
+        "name": "KELURAHAN KARANGANYAR",
+        "latitude": -6.9756268749,
+        "longitude": 110.3320945555,
+        "image": "karanganyar.png",
+        "is_district": false
+    },
+    {
+        "id": 173,
+        "district_id": 16,
+        "name": "KELURAHAN MANGKANG KULON",
+        "latitude": -6.9728229691,
+        "longitude": 110.2979351154,
+        "image": "mangkang_kulon.jpg",
+        "is_district": false
+    },
+    {
+        "id": 174,
+        "district_id": 16,
+        "name": "KELURAHAN MANGKANG WETAN",
+        "latitude": -6.9698430471,
+        "longitude": 110.3059745541,
+        "image": "mangkang_wetan.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 175,
+        "district_id": 16,
+        "name": "KELURAHAN MANGUNHARJO",
+        "latitude": -6.9572299046,
+        "longitude": 110.3130787112,
+        "image": "mangunharjo_tugu.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 176,
+        "district_id": 16,
+        "name": "KELURAHAN RANDU GARUT",
+        "latitude": -6.9752365494,
+        "longitude": 110.3193828028,
+        "image": "randu_garut.jpeg",
+        "is_district": false
+    },
+    {
+        "id": 177,
+        "district_id": 16,
+        "name": "KELURAHAN TUGUREJO",
+        "latitude": -6.9781608733,
+        "longitude": 110.3529460991,
+        "image": "tugurejo.jpg",
+        "is_district": false
+    },
+    {
+        "id": 178,
+        "district_id": 16,
+        "name": "KECAMATAN TUGU",
+        "latitude": -6.9855063551,
+        "longitude": 110.3453942571,
+        "image": "kec_tugu.jpg",
+        "is_district": true
+    },
+    {
+        "id": 179,
+        "district_id": 1,
+        "name": "KECAMATAN BANYUMANIK",
+        "latitude": -7.0531846095,
+        "longitude": 110.4284156754,
+        "image": "kec_banyumanik.jpg",
+        "is_district": true
+    },
+    {
+        "id": 180,
+        "district_id": 2,
+        "name": "KECAMATAN CANDISARI",
+        "latitude": -7.0267293248,
+        "longitude": 110.4279120412,
+        "image": "kec_candisari.png",
+        "is_district": true
+    },
+    {
+        "id": 181,
+        "district_id": 3,
+        "name": "KECAMATAN GAJAH MUNGKUR",
+        "latitude": -7.0042778655,
+        "longitude": 110.4089510759,
+        "image": "kec_gajahmungkur.jpg",
+        "is_district": true
+    },
+    {
+        "id": 182,
+        "district_id": 4,
+        "name": "KECAMATAN GAYAMSARI",
+        "latitude": -6.9991978039,
+        "longitude": 110.4493291744,
+        "image": "kec_gayamsari.jpeg",
+        "is_district": true
+    },
+    {
+        "id": 183,
+        "district_id": 5,
+        "name": "KECAMATAN GENUK",
+        "latitude": -6.965297433,
+        "longitude": 110.4772336516,
+        "image": "kec_genuk.jpeg",
+        "is_district": true
+    },
+    {
+        "id": 184,
+        "district_id": 6,
+        "name": "KECAMATAN GUNUNG PATI",
+        "latitude": -7.1035271737,
+        "longitude": 110.3865072739,
+        "image": "kec_gunungpati.png",
+        "is_district": true
+    },
+    {
+        "id": 185,
+        "district_id": 7,
+        "name": "KECAMATAN MIJEN",
+        "latitude": -7.0764436767,
+        "longitude": 110.3090936393,
+        "image": "kec_mijen.jpg",
+        "is_district": true
+    },
+    {
+        "id": 186,
+        "district_id": 8,
+        "name": "KECAMATAN NGALIYAN",
+        "latitude": -6.9969008708,
+        "longitude": 110.3474121024,
+        "image": "kec_ngaliyan.jpg",
+        "is_district": true
+    },
+    {
+        "id": 187,
+        "district_id": 9,
+        "name": "KECAMATAN PEDURUNGAN",
+        "latitude": -7.0095891458,
+        "longitude": 110.4657934376,
+        "image": "kec_pedurungan.jpg",
+        "is_district": true
+    },
+    {
+        "id": 188,
+        "district_id": 10,
+        "name": "KECAMATAN SEMARANG BARAT",
+        "latitude": -6.9820983249,
+        "longitude": 110.3891980073,
+        "image": "kec_semarang_barat.png",
+        "is_district": true
+    },
+    {
+        "id": 189,
+        "district_id": 11,
+        "name": "KECAMATAN SEMARANG SELATAN",
+        "latitude": -7.0019590382,
+        "longitude": 110.437325043,
+        "image": "kec_semarang_selatan.jpg",
+        "is_district": true
+    },
+    {
+        "id": 190,
+        "district_id": 12,
+        "name": "KECAMATAN SEMARANG TENGAH",
+        "latitude": -6.9836808452,
+        "longitude": 110.419744255,
+        "image": "kec_semarang_tengah.jpg",
+        "is_district": true
+    },
+    {
+        "id": 191,
+        "district_id": 13,
+        "name": "KECAMATAN SEMARANG TIMUR",
+        "latitude": -6.986838745,
+        "longitude": 110.4396573585,
+        "image": "kec_semarang_timur.jpeg",
+        "is_district": true
+    },
+    {
+        "id": 192,
+        "district_id": 14,
+        "name": "KECAMATAN SEMARANG UTARA",
+        "latitude": -6.9654578971,
+        "longitude": 110.4070016996,
+        "image": "kec_semarang_utara.jpg",
+        "is_district": true
+    },
+    {
+        "id": 193,
+        "district_id": 15,
+        "name": "KECAMATAN TEMBALANG",
+        "latitude": -7.0598200261,
+        "longitude": 110.4475085876,
+        "image": "kec_tembalang.jpg",
+        "is_district": true
+    }
+]

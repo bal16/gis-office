@@ -84,10 +84,10 @@ class DatabaseSeeder extends Seeder
         return base_path("database/seeders/data/$path");
     }
 
-    private function makeCollectionfromJSON($filename){
+    private function makeCollectionfromJSON($path){
         return collect(
             json_decode(
-                file_get_contents($this->dataPath('kantor.json'))
+                file_get_contents($path)
                 )
         );
     }
