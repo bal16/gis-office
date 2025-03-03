@@ -34,14 +34,15 @@
             @endforeach
             <x-slot:footer>
                 <div>
-                    <small>Showing {{ $offices->perpage() }} of {{ $offices->total() }} entries</small>
+                    <small class="ajax-content">Showing {{ $offices->count() }} of {{ $offices->total() }}
+                        entries</small>
                 </div>
                 <x-pagination current="{{ $offices->currentPage() }}" last="{{ $offices->lastPage() }}"
-                    next="{{ $offices->nextPageUrl() }}" prev="{{ $offices->previousPageUrl() }}" />
+                    next="{{ $offices->currentPage() + 1 }}" prev="{{ $offices->currentPage() - 1 }}" />
             </x-slot:footer>
         </x-table.layout>
     </main>
     <x-layouts.footer />
 
-    <script src="{{ asset('js/calcDist.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </x-layouts>

@@ -9,7 +9,7 @@
             Buka Map
         </a>
         <br />
-        <span  class="pt-2 {{ "jarak-$number" }}">menghitung jarak...</span>
+        <span class="pt-2 {{ "jarak-$number" }}">menghitung jarak...</span>
         {{-- {{ $longitude }}, {{ $latitude }} --}}
     </td>
     <td class="rounded-r-xl p-5">

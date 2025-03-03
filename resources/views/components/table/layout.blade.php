@@ -12,11 +12,11 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody class="ajax-content">
             {{ $body }}
         </tbody>
     </table>
-    <div class="md:hidden text-left w-full">
+    <div class="md:hidden text-left w-full ajax-content">
         {{ $slot }}
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between text-xs md:text-sm w-full pt-3">
