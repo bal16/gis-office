@@ -96,7 +96,7 @@ function makePaginationElement({ prev, current, last, next }) {
         }
         // Dots if needed
         if (current > 4) {
-            paginationHTML += `<span class="dots">...</span>`;
+            paginationHTML += `<span class="text-[#a12c2f] w-full border-[#a12c2f] border-1 px-2">...</span>`;
         }
         // Middle page
         if (current > 2 && current < last - 1) {
@@ -108,7 +108,7 @@ function makePaginationElement({ prev, current, last, next }) {
         }
         // Dots if needed
         if (current < last - 3) {
-            paginationHTML += `<span class="dots">...</span>`;
+            paginationHTML += `<span class="text-[#a12c2f] w-full border-[#a12c2f] border-1 px-2">...</span>`;
         }
         // Last two pages
         for (let i = last - 1; i <= last; i++) {
