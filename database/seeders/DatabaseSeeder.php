@@ -26,8 +26,11 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        $districts = collect(json_decode(file_get_contents(base_path('database/seeders/data/kecamatan.json'))));
-        $offices = collect(json_decode(file_get_contents(base_path('database/seeders/data/kantor.json'))));
+        $districts = collect(
+            json_decode(
+                file_get_contents(base_path('database/seeders/data/kecamatan.json'))
+            )
+        );
 
         $districts->each(function ($district) {
             Models\District::factory()->create([
@@ -36,20 +39,26 @@ class DatabaseSeeder extends Seeder
             ]);
         });
 
-        $offices->each(function ($office) {
+        $offices = collect(
+            json_decode(
+                file_get_contents(base_path('database/seeders/data/kantor.json'))
+            )
+        );
+
+        $offices->each(function ($office) use ($districts) {
             $imagePath = base_path("database/seeders/data/$office->image");
 
             if (file_exists($imagePath)) {
                 $imageContent = file_get_contents($imagePath);
                 $extension = pathinfo($office->image, PATHINFO_EXTENSION);
 
-                $hashedFileName = 'offices/' . Str::random(40) . '.' . $extension;  // Random 40 character string + extension
+                $randomString = Str::random(40);
+                $hashedFileName = "offices/$randomString.$extension";
 
-                Storage::disk('public')->put( $hashedFileName, $imageContent);
+                Storage::disk('public')->put($hashedFileName, $imageContent);
 
                 $office->image = $hashedFileName;
             }
-
 
             Models\Office::factory()->create([
                 'id' => $office->id,
@@ -58,7 +67,7 @@ class DatabaseSeeder extends Seeder
                 'name' => $office->name,
                 'latitude' => $office->latitude,
                 'longitude' => $office->longitude,
-                'image' => $office->image, //$path
+                'image' => $office->image,
             ]);
         });
     }
