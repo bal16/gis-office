@@ -254,6 +254,13 @@ async function handleAJAX(queryParams) {
         next: nextPage,
         prev: previousPage,
     });
+
+    data.forEach((office) => {
+        const currentLocation = JSON.parse(localStorage.getItem("currentLocation"));
+        if (currentLocation) {
+            calcDistance(currentLocation, [office.latitude, office.longitude], `distance-${office.id}`);
+        }
+    });
 }
 
 async function handleSearch(e) {
