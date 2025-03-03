@@ -29,7 +29,7 @@
             @foreach ($offices as $office)
                 <x-table.item-mobile key="{{ $office->id }}" longitude="{{ $office->longitude }}"
                     latitude="{{ $office->latitude }}" image="{{ $office->image }}">
-                    {{ "$office->name, $office->district_name" }},
+                    {{ "$office->name, $office->district_name" }}
                 </x-table.item-mobile>
             @endforeach
             <x-slot:footer>

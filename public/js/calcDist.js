@@ -1,11 +1,11 @@
-const map = L.map(document.createElement("div")).setView([51.505, -0.09], 13);
-// Ask user for current location
+const map = L.map(document.createElement("div")).setView([0, 0], 13);
+
 navigator.geolocation.getCurrentPosition(function (location) {
     const latlng = [location.coords.latitude, location.coords.longitude];
-    console.log("🚀 ~ latlng:", latlng);
     localStorage.setItem("currentLocation", JSON.stringify(latlng));
     L.marker(latlng).addTo(map);
 });
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
