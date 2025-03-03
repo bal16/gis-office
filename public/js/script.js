@@ -73,79 +73,61 @@ const getCurrentQuery = () => {
     }
 };
 
-function makePaginationElement({ prev, current, last, next }) {
-    let paginationHTML = `<button
-        class="w-full pr-3 active:cursor-pointer"
-        ${prev === null ? "disabled" : ""}
-        onclick="handleAJAX({ page: ${prev} })">
-        Previous
+const makePaginationItem = (key, current) => `<button
+                class="${
+                    key === current
+                        ? "text-[#fff] bg-[#a12c2f]"
+                        : "text-[#a12c2f]"
+                } w-full border-[#a12c2f] border-1 px-2 cursor-pointer"
+                onclick="handleAJAX({ page: ${key} })">
+                ${key}
+            </button>`;
+
+const makePaginationDots = () =>
+    `<span class="text-[#a12c2f] w-full border-[#a12c2f] border-1 px-2">...</span>`;
+
+const makePaginationNav = (key, value) => `<button
+        class="w-full pl-3 active:cursor-pointer"
+        onclick="handleAJAX({ page: ${value} })"
+        ${value === null ? "disabled" : ""}
+        >
+        ${key}
     </button>`;
+
+const makePaginationElement = ({ prev, current, last, next }) => {
+    let paginationHTML = makePaginationNav("Previous", prev);
 
     if (last > 5) {
         // First two pages
         for (let i = 1; i <= 2; i++) {
-            paginationHTML += `<button
-                class="${
-                    i === current
-                        ? "text-[#fff] bg-[#a12c2f]"
-                        : "text-[#a12c2f]"
-                } w-full border-[#a12c2f] border-1 px-2 cursor-pointer"
-                onclick="handleAJAX({ page: ${i} })">
-                ${i}
-            </button>`;
+            paginationHTML += makePaginationItem(i, current);
         }
         // Dots if needed
         if (current > 4) {
-            paginationHTML += `<span class="text-[#a12c2f] w-full border-[#a12c2f] border-1 px-2">...</span>`;
+            paginationHTML += makePaginationDots();
         }
         // Middle page
         if (current > 2 && current < last - 1) {
-            paginationHTML += `<button
-                class="text-[#fff] bg-[#a12c2f] w-full border-[#a12c2f] border-1 px-2 cursor-pointer"
-                onclick="handleAJAX({ page: ${current} })">
-                ${current}
-            </button>`;
+            paginationHTML += makePaginationItem(current, current);
         }
         // Dots if needed
         if (current < last - 3) {
-            paginationHTML += `<span class="text-[#a12c2f] w-full border-[#a12c2f] border-1 px-2">...</span>`;
+            paginationHTML += makePaginationDots();
         }
         // Last two pages
         for (let i = last - 1; i <= last; i++) {
-            paginationHTML += `<button
-                class="${
-                    i === current
-                        ? "text-[#fff] bg-[#a12c2f]"
-                        : "text-[#a12c2f]"
-                } w-full border-[#a12c2f] border-1 px-2 cursor-pointer"
-                onclick="handleAJAX({ page: ${i} })">
-                ${i}
-            </button>`;
+            paginationHTML += makePaginationItem(i, current);
         }
     } else {
         for (let i = 1; i <= last; i++) {
-            paginationHTML += `<button
-                class="${
-                    i === current
-                        ? "text-[#fff] bg-[#a12c2f]"
-                        : "text-[#a12c2f]"
-                } w-full border-[#a12c2f] border-1 px-2 cursor-pointer"
-                onclick="handleAJAX({ page: ${i} })">
-                ${i}
-            </button>`;
+            paginationHTML += makePaginationItem(i, current);
         }
     }
 
-    paginationHTML += `<button
-        class="w-full pl-3 active:cursor-pointer"
-        onclick="handleAJAX({ page: ${next} })"
-        ${next === null ? "disabled" : ""}
-        >
-        Next
-    </button>`;
+    paginationHTML += makePaginationNav("Next", next);
 
     return paginationHTML;
-}
+};
 
 const makeTableItemElement = (office) => `
             <tr class="bg-white shadow-lg">
@@ -204,6 +186,11 @@ async function handleAJAX(queryParams) {
     const currentQuery = getCurrentQuery();
     const mergedParams = { ...currentQuery, ...queryParams };
 
+    // Don't send empty string for q to server
+    if (mergedParams.q === "") {
+        delete mergedParams.q;
+    }
+
     const queryString = Object.entries(mergedParams)
         .map(([key, value]) => `${key}=${value}`)
         .join("&");
@@ -226,6 +213,13 @@ async function handleAJAX(queryParams) {
         lastPage = last_page;
         nextPage = currentPage + 1;
         previousPage = currentPage - 1;
+
+        // Fix bug when page < 1
+        if (previousPage < 1) {
+            previousPage = 1;
+            delete mergedParams.page;
+        }
+
         data = apiData;
         totalData = total;
     } catch (error) {
