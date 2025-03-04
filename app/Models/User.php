@@ -45,6 +45,7 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
     {
         return [
             'email_verified_at' => 'datetime',
+            'accepted_at' => 'datetime',
             'password' => 'hashed',
         ];
     }
@@ -53,9 +54,11 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
     {
         // add logic only accepted users can access the panel
         // add accepted rows to table?
-        if($panel->getId() == 'admin' ){
-            return !!$this->accepted_at;
-        }
+        // if($panel->getId() == 'admin' ){
+        //     return !!$this->accepted_at;
+        // }
+
+        // return str_contains($this->email, '@tabel.dev');
         return true;
     }
 
