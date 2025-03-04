@@ -13,12 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet" />
     <!-- Styles / Scripts -->
-    {{-- @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot'))) --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- @endif --}}
 </head>
 
-<body class="font-[raleway] antialiased bg-gray-100">
+<body class="font-raleway antialiased bg-gray-100">
     {{ $slot }}
 </body>
 

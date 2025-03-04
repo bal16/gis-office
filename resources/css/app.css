@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @source "../views";
+
+@theme{
+    --color-white: #fff;
+    --color-primary: #a12c2f;
+    --color-secondary: #c74e4b;
+    --color-tertiary: #ffb5abaa;
+    --color-quaternary:#de8789;
+
+    --font-raleway: 'raleway', sans-serif;
+}
+
+

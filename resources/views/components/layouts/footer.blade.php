@@ -1,4 +1,4 @@
-<footer class="bg-[#a12c2f] text-[#fff] max-w-[1280px] mx-auto">
+<footer class="bg-primary text-white max-w-[1280px] mx-auto">
     <div class="flex flex-col md:flex-row gap-10 md:gap-25 px-8 md:px-15 pt-8 pb-5 text-left">
         <div>
             <p class="text-sm">
@@ -54,7 +54,7 @@
                 referrerpolicy="no-referrer-when-downgrade" data-ruffle-polyfilled=""></iframe>
         </div>
     </div>
-    <div class="text-xs md:text-sm bg-[#c74e4b] text-center py-2">
+    <div class="text-xs md:text-sm bg-secondary text-center py-2">
         <p>&copy;Copyright 2025 All Right Reserved by Team Magang</p>
     </div>
 </footer>

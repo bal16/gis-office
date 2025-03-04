@@ -1,10 +1,10 @@
-<tr class="bg-[#fff] shadow-lg">
+<tr class="bg-white shadow-lg">
     <td class="rounded-l-xl pl-3 pr-5">
         {{ $number }}
     </td>
     <td class="px-5 text-sm max-w-100 min-w-100">{{ $slot }}</td>
     <td class="px-5 text-sm">
-        <a class="bg-[#a12c2f] text-[#fff] px-3 py-1 rounded-full"
+        <a class="bg-primary text-white px-3 py-1 rounded-full"
             href="{{ "https://www.google.com/maps/dir/Current+Location/$latitude,$longitude" }}" target="_blank">
             Buka Map
         </a>

@@ -76,21 +76,21 @@ const getCurrentQuery = () => {
 const makePaginationItem = (key, current) => `<button
                 class="${
                     key === current
-                        ? "max-w-8 text-[#fff] bg-[#a12c2f]"
-                        : "text-[#a12c2f]"
-                } full min-w-7 min-h-7 border-[#a12c2f] border-r text-center items-center cursor-pointer"
+                        ? "max-w-8 text-white bg-primary"
+                        : "text-primary"
+                } full min-w-7 min-h-7 border-primary border-r text-center items-center cursor-pointer"
                 onclick="handleAJAX({ page: ${key} })">
                 ${key}
             </button>`;
 
 const makePaginationDots = () =>
-    `<span class="text-[#a12c2f] w-full min-w-7 min-h-7 text-center border-[#a12c2f] border-r block items-center">...</span>`;
+    `<span class="text-primary w-full min-w-7 min-h-7 text-center border-primary border-r block items-center">...</span>`;
 
 const makePaginationNav = (key, value, disabled = false) => {
     try {
         return `<button
             class="px-2 min-w-20 min-h-7 cursor-pointer text-center items-center disabled:text-gray-500 ${
-                key === "Previous" ? "border-[#a12c2f] border-r" : ""
+                key === "Previous" ? "border-primary border-r" : ""
             } disabled:cursor-not-allowed"
             onclick="handleAJAX({ page: ${value} })"
             ${disabled ? "disabled" : ""}
@@ -164,7 +164,7 @@ const makeTableItemElement = (office) => `
         `;
 
 const makeMobileItemElement = (office) => `
-            <div class="bg-[#fff] rounded-xl px-5 py-5 mb-3 shadow-lg text-center">
+            <div class="bg-white rounded-xl px-5 py-5 mb-3 shadow-lg text-center">
     <ul>
         <li class="flex font-bold gap-1 pb-5 justify-center">
             <div>${office.name}, ${office.district_name}</div>
@@ -175,7 +175,7 @@ const makeMobileItemElement = (office) => `
                     <a
                         href="https://www.google.com/maps/dir/Current+Location/${office.latitude},${office.longitude}"
                         target="_blank"
-                        class="bg-[#a12c2f] text-[#fff] px-3 py-1 rounded-full"
+                        class="bg-primary text-white px-3 py-1 rounded-full"
                     >
                         Buka Map
                     </a>

@@ -5,7 +5,7 @@
 @endphp
 
 
-<div class="grid grid-flow-col bg-[#fff] shadow-lg rounded-md mt-4 md:mt-0 ajax-content">
+<div class="grid grid-flow-col bg-white shadow-lg rounded-md mt-4 md:mt-0 ajax-content">
     <x-pagination.nav value="{{ $prev }}" disabled="{{ $prev < 1 }}">Previous</x-pagination.nav>
     @if ($last > 5)
         <!-- First two pages -->
