@@ -5,8 +5,8 @@
 @endphp
 
 
-<div class="flex bg-[#fff] shadow-lg rounded-md mt-4 md:mt-0 px-2 ajax-content">
-    <x-pagination.nav value="{{ $prev }}">Previous</x-pagination.nav>
+<div class="grid grid-flow-col bg-[#fff] shadow-lg rounded-md mt-4 md:mt-0 ajax-content">
+    <x-pagination.nav value="{{ $prev }}" disabled="{{ $prev < 1 }}">Previous</x-pagination.nav>
     @if ($last > 5)
         <!-- First two pages -->
         @for ($i = 1; $i <= 2; $i++)
@@ -14,7 +14,7 @@
         @endfor
 
         <!-- Dots if needed -->
-        @if ($current > 4)
+        @if ($current >= 4)
             <x-pagination.dot />
         @endif
 
@@ -24,7 +24,7 @@
         @endif
 
         <!-- Dots if needed -->
-        @if ($current < $last - 3)
+        @if ($current <= $last - 3)
             <x-pagination.dot />
         @endif
 
@@ -37,5 +37,5 @@
             <x-pagination.item key="{{ $i }}" current="{{ $current }}" />
         @endfor
     @endif
-    <x-pagination.nav value="{{ $next }}">Next</x-pagination.nav>
+    <x-pagination.nav value="{{ $next }}" disabled="{{ $next > $last }}">Next</x-pagination.nav>
 </div>

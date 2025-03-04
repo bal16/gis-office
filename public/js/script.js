@@ -76,26 +76,35 @@ const getCurrentQuery = () => {
 const makePaginationItem = (key, current) => `<button
                 class="${
                     key === current
-                        ? "text-[#fff] bg-[#a12c2f]"
+                        ? "max-w-8 text-[#fff] bg-[#a12c2f]"
                         : "text-[#a12c2f]"
-                } w-full border-[#a12c2f] border-1 px-2 cursor-pointer"
+                } full min-w-7 min-h-7 border-[#a12c2f] border-r text-center items-center cursor-pointer"
                 onclick="handleAJAX({ page: ${key} })">
                 ${key}
             </button>`;
 
 const makePaginationDots = () =>
-    `<span class="text-[#a12c2f] w-full border-[#a12c2f] border-1 px-2">...</span>`;
+    `<span class="text-[#a12c2f] w-full min-w-7 min-h-7 text-center border-[#a12c2f] border-r block items-center">...</span>`;
 
-const makePaginationNav = (key, value) => `<button
-        class="w-full pl-3 active:cursor-pointer"
-        onclick="handleAJAX({ page: ${value} })"
-        ${value === null ? "disabled" : ""}
-        >
-        ${key}
-    </button>`;
+const makePaginationNav = (key, value, disabled = false) => {
+    try {
+        return `<button
+            class="px-2 min-w-20 min-h-7 cursor-pointer text-center items-center disabled:text-gray-500 ${
+                key === "Previous" ? "border-[#a12c2f] border-r" : ""
+            } disabled:cursor-not-allowed"
+            onclick="handleAJAX({ page: ${value} })"
+            ${disabled ? "disabled" : ""}
+            >
+            ${key}
+        </button>`;
+    } catch (error) {
+        console.error("Error: Unhandled exception in makePaginationNav", error);
+        return "";
+    }
+};
 
 const makePaginationElement = ({ prev, current, last, next }) => {
-    let paginationHTML = makePaginationNav("Previous", prev);
+    let paginationHTML = makePaginationNav("Previous", prev, prev < 1);
 
     if (last > 5) {
         // First two pages
@@ -103,7 +112,7 @@ const makePaginationElement = ({ prev, current, last, next }) => {
             paginationHTML += makePaginationItem(i, current);
         }
         // Dots if needed
-        if (current > 4) {
+        if (current >= 4) {
             paginationHTML += makePaginationDots();
         }
         // Middle page
@@ -111,7 +120,7 @@ const makePaginationElement = ({ prev, current, last, next }) => {
             paginationHTML += makePaginationItem(current, current);
         }
         // Dots if needed
-        if (current < last - 3) {
+        if (current <= last - 3) {
             paginationHTML += makePaginationDots();
         }
         // Last two pages
@@ -124,7 +133,7 @@ const makePaginationElement = ({ prev, current, last, next }) => {
         }
     }
 
-    paginationHTML += makePaginationNav("Next", next);
+    paginationHTML += makePaginationNav("Next", next, next > last);
 
     return paginationHTML;
 };
@@ -215,8 +224,7 @@ async function handleAJAX(queryParams) {
         previousPage = currentPage - 1;
 
         // Fix bug when page < 1
-        if (previousPage < 1) {
-            previousPage = 1;
+        if (previousPage < 2) {
             delete mergedParams.page;
         }
 
@@ -256,9 +264,15 @@ async function handleAJAX(queryParams) {
     });
 
     data.forEach((office) => {
-        const currentLocation = JSON.parse(localStorage.getItem("currentLocation"));
+        const currentLocation = JSON.parse(
+            localStorage.getItem("currentLocation")
+        );
         if (currentLocation) {
-            calcDistance(currentLocation, [office.latitude, office.longitude], `distance-${office.id}`);
+            calcDistance(
+                currentLocation,
+                [office.latitude, office.longitude],
+                `distance-${office.id}`
+            );
         }
     });
 }
