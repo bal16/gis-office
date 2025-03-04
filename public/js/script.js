@@ -174,7 +174,7 @@ const makeTableItemElement = (office) => `
 }" data-alt="gambar-${office.id}" >
                     <img
                         src="storage/${office.image}"
-                        class="rounded-xl h-60 w-60 object-cover shadow-md hover:scale-125 transition-transform"
+                        class="rounded-xl h-60 w-60 object-cover shadow-md hover:scale-105 transition-transform"
                     />
                     </a>
                 </td>
@@ -220,7 +220,7 @@ const makeMobileItemElement = (office) => `
                 <a href="/storage/${office.image}" data-fslightbox="gambar-${
     office.id
 }-mobile" data-alt="gambar-${office.id}" >
-                <img class="rounded-xl h-45 w-80 object-cover shadow-md hover:scale-125 transition-transform" src="/storage/${
+                <img class="rounded-xl h-45 w-80 object-cover shadow-md hover:scale-105 transition-transform" src="/storage/${
                     office.image
                 }" alt="gambar-${office.id}" />
                 </a>
