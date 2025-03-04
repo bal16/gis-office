@@ -164,29 +164,40 @@ const makeTableItemElement = (office) => `
         `;
 
 const makeMobileItemElement = (office) => `
-            <tr class="bg-white shadow-lg">
-                <td class="rounded-l-xl pl-3 pr-5">${office.id}</td>
-                <td class="px-5 text-sm max-w-100 min-w-100">
-                    ${office.name}<br />${office.district_name}
-                </td>
-                <td class="px-5 text-sm">
+            <div class="bg-[#fff] rounded-xl px-5 py-5 mb-3 shadow-lg text-center">
+    <ul>
+        <li class="flex font-bold gap-1 pb-5 justify-center">
+            <div>${office.name}, ${office.district_name}</div>
+        </li>
+        <li class="flex gap-1 pb-2 justify-center">
+
+            <div>
                     <a
-                        class="bg-red-700 text-white px-3 py-1 rounded-full"
                         href="https://www.google.com/maps/dir/Current+Location/${office.latitude},${office.longitude}"
                         target="_blank"
+                        class="bg-[#a12c2f] text-[#fff] px-3 py-1 rounded-full"
                     >
                         Buka Map
-                    </a><br />
-                    <span class="pt-2 distance-${office.id}">menghitung jarak...</span>
-                </td>
-                <td class="rounded-r-xl p-5">
-                    <img
-                        src="storage/${office.image}"
-                        class="rounded-xl h-60 w-60 object-cover"
-                    />
-                </td>
-            </tr>
-        `;
+                    </a>
+            </div>
+                </li>
+        <li class="flex gap-1 pb-2 justify-center">
+            <div class="flex inline-text jarak-${office.id}"> <svg class="mr-3 -ml-1 size-5 animate-spin text-black"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                        stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                </svg>Menghitung Jarak...</div>
+        </li>
+        <li>
+            <div class="flex items-center justify-center">
+                <img class="rounded-xl h-45 w-80 object-cover" src="/storage/${office.image}" alt="gambar-${office.id}" />
+            </div>
+        </li>
+    </ul>
+</div>        `;
 
 let loading = false;
 const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
