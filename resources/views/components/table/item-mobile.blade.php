@@ -24,8 +24,10 @@
         </li>
         <li>
             <div class="flex items-center justify-center">
-                <img class="rounded-xl h-45 w-80 object-cover" src="{{ asset('storage/' . $image) }}"
-                    alt="{{ "gambar-$key" }}" />
+                <a href="{{ asset('storage/' . $image) }}" data-fslightbox="{{ "gambar-$key-mobile" }}" data-alt="{{ "gambar-$key" }}">
+                    <img class="rounded-xl h-45 w-80 object-cover shadow-mdhover:scale-125 transition-transform" src="{{ asset('storage/' . $image) }}"
+                        alt="{{ "gambar-$key" }}" />
+                </a>
             </div>
         </li>
     </ul>

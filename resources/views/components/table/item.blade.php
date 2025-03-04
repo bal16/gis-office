@@ -18,7 +18,9 @@
                     </svg>Menghitung Jarak...</span>
     </td>
     <td class="rounded-r-xl p-5">
-        <img src="{{ asset('storage/' . $image) }}" class="rounded-xl h-60 w-60 object-cover" />
+        <a href="{{ asset('storage/' . $image) }}" data-fslightbox="{{ "gambar-$number" }}" data-alt="{{ "gambar-$number" }}">
+            <img src="{{ asset('storage/' . $image) }}" class="rounded-xl h-60 w-60 object-cover shadow-md hover:scale-125 transition-transform" />
+        </a>
     </td>
     <script>
         //get location from local storage

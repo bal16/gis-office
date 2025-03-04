@@ -45,5 +45,6 @@
     </main>
     <x-layouts.footer />
 
+    <script src="{{ asset('vendor/fslightbox/fslightbox.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </x-layouts>

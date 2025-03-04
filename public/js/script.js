@@ -158,7 +158,9 @@ const makeTableItemElement = (office) => `
                     >
                         Buka Map
                     </a><br />
-                    <span class="flex inline-text pt-2 jarak-${office.id}"><svg class="mr-3 -ml-1 size-5 animate-spin text-black"
+                    <span class="flex inline-text pt-2 jarak-${
+                        office.id
+                    }"><svg class="mr-3 -ml-1 size-5 animate-spin text-black"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor"
@@ -167,10 +169,14 @@ const makeTableItemElement = (office) => `
                     </svg>Menghitung Jarak...</span></span>
                 </td>
                 <td class="rounded-r-xl p-5">
+                <a href="storage/${office.image}" data-fslightbox="gambar-${
+    office.id
+}" data-alt="gambar-${office.id}" >
                     <img
                         src="storage/${office.image}"
-                        class="rounded-xl h-60 w-60 object-cover"
+                        class="rounded-xl h-60 w-60 object-cover shadow-md hover:scale-125 transition-transform"
                     />
+                    </a>
                 </td>
             </tr>
         `;
@@ -211,9 +217,13 @@ const makeMobileItemElement = (office) => `
         </li>
         <li>
             <div class="flex items-center justify-center">
-                <img class="rounded-xl h-45 w-80 object-cover" src="/storage/${
+                <a href="/storage/${office.image}" data-fslightbox="gambar-${
+    office.id
+}-mobile" data-alt="gambar-${office.id}" >
+                <img class="rounded-xl h-45 w-80 object-cover shadow-md hover:scale-125 transition-transform" src="/storage/${
                     office.image
                 }" alt="gambar-${office.id}" />
+                </a>
             </div>
         </li>
     </ul>
@@ -304,6 +314,8 @@ async function handleAJAX(queryParams) {
             next: nextPage,
             prev: previousPage,
         });
+
+        refreshFsLightbox();
 
         setTimeout(() => {
             data.forEach((office) => {
