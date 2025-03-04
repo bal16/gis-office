@@ -7,6 +7,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('api', [OfficeController::class, 'api']);
-Route::get('/', [OfficeController::class, 'index']);
+Route::get('api', [OfficeController::class, 'api'])->name('api');
+Route::get('/', [OfficeController::class, 'index'])->name('main');
 // Route::get('/profile', [UserController::class, 'show'])->middleware('auth');
