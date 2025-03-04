@@ -11,8 +11,8 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-function calcDistance(start, end, id) {
-    if (!start || !end || !id) {
+function calcDistance(start, end, className) {
+    if (!start || !end || !className) {
         console.error("Error: Invalid arguments provided to calcDistance");
         return;
     }
@@ -31,10 +31,10 @@ function calcDistance(start, end, id) {
             let distance = route.summary.totalDistance;
             distance = (distance / 1000).toFixed(2) + " km";
 
-            const ELEMENTS = document.getElementsByClassName(id);
+            const ELEMENTS = document.getElementsByClassName(className);
             if (ELEMENTS.length < 2) {
                 console.error(
-                    "Error: Not enough elements found with the given class id"
+                    "Error: Not enough elements found with the given class name"
                 );
                 return;
             }
@@ -142,17 +142,23 @@ const makeTableItemElement = (office) => `
             <tr class="bg-white shadow-lg">
                 <td class="rounded-l-xl pl-3 pr-5">${office.id}</td>
                 <td class="px-5 text-sm max-w-100 min-w-100">
-                    ${office.name}<br />${office.district_name}
+                    <span class="font-bold">${office.name}</span><br />${
+    office.is_district ? "" : office.district_name
+}
                 </td>
                 <td class="px-5 text-sm">
                     <a
                         class="bg-red-700 text-white px-3 py-1 rounded-full"
-                        href="https://www.google.com/maps/dir/Current+Location/${office.latitude},${office.longitude}"
+                        href="https://www.google.com/maps/dir/Current+Location/${
+                            office.latitude
+                        },${office.longitude}"
                         target="_blank"
                     >
                         Buka Map
                     </a><br />
-                    <span class="pt-2 distance-${office.id}">menghitung jarak...</span>
+                    <span class="pt-2 distance-${
+                        office.id
+                    }">menghitung jarak...</span>
                 </td>
                 <td class="rounded-r-xl p-5">
                     <img
@@ -167,13 +173,17 @@ const makeMobileItemElement = (office) => `
             <div class="bg-white rounded-xl px-5 py-5 mb-3 shadow-lg text-center">
     <ul>
         <li class="flex font-bold gap-1 pb-5 justify-center">
-            <div>${office.name}, ${office.district_name}</div>
+            <div><span class="font-bold">${office.name}</span> ${
+    office.is_district ? "" : office.district_name
+}</div>
         </li>
         <li class="flex gap-1 pb-2 justify-center">
 
             <div>
                     <a
-                        href="https://www.google.com/maps/dir/Current+Location/${office.latitude},${office.longitude}"
+                        href="https://www.google.com/maps/dir/Current+Location/${
+                            office.latitude
+                        },${office.longitude}"
                         target="_blank"
                         class="bg-primary text-white px-3 py-1 rounded-full"
                     >
@@ -182,7 +192,9 @@ const makeMobileItemElement = (office) => `
             </div>
                 </li>
         <li class="flex gap-1 pb-2 justify-center">
-            <div class="flex inline-text jarak-${office.id}"> <svg class="mr-3 -ml-1 size-5 animate-spin text-black"
+            <div class="flex inline-text jarak-${
+                office.id
+            }"> <svg class="mr-3 -ml-1 size-5 animate-spin text-black"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
                         stroke-width="4"></circle>
@@ -193,7 +205,9 @@ const makeMobileItemElement = (office) => `
         </li>
         <li>
             <div class="flex items-center justify-center">
-                <img class="rounded-xl h-45 w-80 object-cover" src="/storage/${office.image}" alt="gambar-${office.id}" />
+                <img class="rounded-xl h-45 w-80 object-cover" src="/storage/${
+                    office.image
+                }" alt="gambar-${office.id}" />
             </div>
         </li>
     </ul>
@@ -206,86 +220,108 @@ async function handleAJAX(queryParams) {
     const currentQuery = getCurrentQuery();
     const mergedParams = { ...currentQuery, ...queryParams };
 
-    // Don't send empty string for q to server
-    if (mergedParams.q === "") {
-        delete mergedParams.q;
-    }
-
-    const queryString = Object.entries(mergedParams)
-        .map(([key, value]) => `${key}=${value}`)
-        .join("&");
-
-    let currentPage, data, lastPage, nextPage, previousPage, totalData;
-
-    try {
-        const response = await fetch(`/api?${queryString}`);
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
-
-        const {
-            current_page,
-            last_page,
-            data: apiData,
-            total,
-        } = await response.json();
-        currentPage = current_page;
-        lastPage = last_page;
-        nextPage = currentPage + 1;
-        previousPage = currentPage - 1;
-
-        // Fix bug when page < 1
-        if (previousPage < 2) {
-            delete mergedParams.page;
-        }
-
-        data = apiData;
-        totalData = total;
-    } catch (error) {
-        console.error("Error: Exception in handleAJAX", error);
+    // Check for null pointer references
+    if (queryParams === null || queryParams === undefined) {
+        console.error("Error: Null pointer reference in handleAJAX");
         return;
     }
 
-    const listItems = data.map((office) => {
-        const desktopItem = makeTableItemElement(office);
-        const mobileItem = makeMobileItemElement(office);
-
-        return [desktopItem, mobileItem];
-    });
-
-    const [desktopList, mobileList] = listItems.reduce(
-        (acc, [desktopItem, mobileItem]) => {
-            acc[0] += desktopItem;
-            acc[1] += mobileItem;
-            return acc;
-        },
-        ["", ""]
-    );
-
-    const newUrl = `${window.location.origin}/?${queryString}`;
-    history.pushState({}, "", newUrl);
-    AJAX_ELEMENTS[0].innerHTML = desktopList;
-    AJAX_ELEMENTS[1].innerHTML = mobileList;
-    AJAX_ELEMENTS[2].innerHTML = `Showing ${data.length} of ${totalData} entriessss`;
-    AJAX_ELEMENTS[3].innerHTML = makePaginationElement({
-        current: currentPage,
-        last: lastPage,
-        next: nextPage,
-        prev: previousPage,
-    });
-
-    data.forEach((office) => {
-        const currentLocation = JSON.parse(
-            localStorage.getItem("currentLocation")
-        );
-        if (currentLocation) {
-            calcDistance(
-                currentLocation,
-                [office.latitude, office.longitude],
-                `distance-${office.id}`
-            );
+    // Check for unhandled exceptions
+    try {
+        // Don't send empty string for q to server
+        if (mergedParams.q === "") {
+            delete mergedParams.q;
         }
-    });
+
+        if (mergedParams.page < 2) {
+            delete mergedParams.q;
+        }
+        const queryString = Object.entries(mergedParams)
+            .map(([key, value]) => `${key}=${value}`)
+            .join("&");
+
+        let currentPage, data, lastPage, nextPage, previousPage, totalData;
+
+        try {
+            const response = await fetch(`/api?${queryString}`);
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+
+            const {
+                current_page,
+                last_page,
+                data: apiData,
+                total,
+            } = await response.json();
+            currentPage = current_page;
+            lastPage = last_page;
+            nextPage = currentPage + 1;
+            previousPage = currentPage - 1;
+
+            // Fix bug when page < 2
+            if (previousPage < 2) {
+                delete mergedParams.page;
+            }
+
+            data = apiData;
+            totalData = total;
+        } catch (error) {
+            console.error("Error: Exception in handleAJAX", error);
+            return;
+        }
+
+        const listItems = data.map((office) => {
+            const desktopItem = makeTableItemElement(office);
+            const mobileItem = makeMobileItemElement(office);
+
+            return [desktopItem, mobileItem];
+        });
+
+        const [desktopList, mobileList] = listItems.reduce(
+            (acc, [desktopItem, mobileItem]) => {
+                acc[0] += desktopItem;
+                acc[1] += mobileItem;
+                return acc;
+            },
+            ["", ""]
+        );
+
+        const newUrl = `${window.location.origin}/?${queryString}`;
+        history.pushState({}, "", newUrl);
+        AJAX_ELEMENTS[0].innerHTML = desktopList;
+        AJAX_ELEMENTS[1].innerHTML = mobileList;
+        AJAX_ELEMENTS[2].innerHTML = `Showing ${data.length} of ${totalData} entriessss`;
+        AJAX_ELEMENTS[3].innerHTML = makePaginationElement({
+            current: currentPage,
+            last: lastPage,
+            next: nextPage,
+            prev: previousPage,
+        });
+
+        setTimeout(() => {
+            data.forEach((office) => {
+                const currentLocation = JSON.parse(
+                    localStorage.getItem("currentLocation")
+                );
+                if (currentLocation) {
+                    calcDistance(
+                        currentLocation,
+                        [office.latitude, office.longitude],
+                        `distance-${office.id}`
+                    );
+                }
+            });
+        }, 5000);
+    } catch (error) {
+        console.error(
+            "Error: Unhandled exception in handleAJAX, queryParams: ",
+            queryParams,
+            "Error: ",
+            error
+        );
+        return;
+    }
 }
 
 async function handleSearch(e) {

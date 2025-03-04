@@ -10,7 +10,6 @@
         </a>
         <br />
         <span class="pt-2 {{ "jarak-$number" }}">menghitung jarak...</span>
-        {{-- {{ $longitude }}, {{ $latitude }} --}}
     </td>
     <td class="rounded-r-xl p-5">
         <img src="{{ asset('storage/' . $image) }}" class="rounded-xl h-60 w-60 object-cover" />

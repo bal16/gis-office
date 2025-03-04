@@ -20,16 +20,17 @@
                     <x-table.item key="{{ $office->id }}" number="{{ $office->id }}"
                         longitude="{{ $office->longitude }}" latitude="{{ $office->latitude }}"
                         image="{{ $office->image }}">
-                        {{ $office->name }}
+                        <span class="font-bold">{{ $office->name }}</span>
                         <br />
-                        {{ $office->district_name }}
+                        {{ $office->is_district? '': $office->district_name }}
                     </x-table.item>
                 @endforeach
             </x-slot:body>
             @foreach ($offices as $office)
                 <x-table.item-mobile key="{{ $office->id }}" longitude="{{ $office->longitude }}"
                     latitude="{{ $office->latitude }}" image="{{ $office->image }}">
-                    {{ "$office->name, $office->district_name" }}
+                    <span class="font-bold">{{ $office->name }}</span>
+                    {{ $office->is_district? '': $office->district_name }}
                 </x-table.item-mobile>
             @endforeach
             <x-slot:footer>

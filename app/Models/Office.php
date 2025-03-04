@@ -41,7 +41,7 @@ class Office extends Model
      * @return \App\Models\Office The Office model as a query builder instance with the applied filters.
      */
     public static function customIndex($search){
-        $offices = static::select('offices.id', 'offices.name', 'districts.name as district_name', 'offices.longitude', 'offices.latitude', 'offices.image')
+        $offices = static::select('offices.id', 'offices.name', 'districts.name as district_name', 'offices.longitude', 'offices.latitude', 'offices.image', 'offices.is_district')
                         ->join('districts', 'districts.id', '=', 'offices.district_id')
                         ->where('offices.name', 'like', "%$search%")
                         ->orWhere('districts.name', 'like', "%$search%");
