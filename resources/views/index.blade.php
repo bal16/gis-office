@@ -1,11 +1,11 @@
 <x-layouts>
     @assets
-        <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
-        <script src="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.js') }}"></script>
+    <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
+    <script src="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.js') }}"></script>
     @endassets
     @assets
-        <link href="{{ asset('vendor/leaflet/leaflet.css') }}" rel="stylesheet" />
-        <link href="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/leaflet/leaflet.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/leaflet-routing/leaflet-routing-machine.css') }}" rel="stylesheet" />
     @endassets
     <x-layouts.header />
 
@@ -16,13 +16,17 @@
                 <x-search />
             </x-slot:header>
             <x-slot:body>
+                @if ($offices->count() == 0)
+                    <tr class="w-full">
+                        <td colspan="4" class="bg-white rounded-2xl shadow-xl text-center px-100 py-3">Tidak ada data.</td>
+                    </tr>
+                @endif
                 @foreach ($offices as $office)
-                    <x-table.item key="{{ $office->id }}" number="{{ $office->id }}"
-                        longitude="{{ $office->longitude }}" latitude="{{ $office->latitude }}"
-                        image="{{ $office->image }}">
+                    <x-table.item key="{{ $office->id }}" number="{{ $office->id }}" longitude="{{ $office->longitude }}"
+                        latitude="{{ $office->latitude }}" image="{{ $office->image }}">
                         <span class="font-bold">{{ $office->name }}</span>
                         <br />
-                        {{ $office->is_district? '': $office->district_name }}
+                        {{ $office->is_district ? '' : $office->district_name }}
                     </x-table.item>
                 @endforeach
             </x-slot:body>
@@ -30,7 +34,7 @@
                 <x-table.item-mobile key="{{ $office->id }}" longitude="{{ $office->longitude }}"
                     latitude="{{ $office->latitude }}" image="{{ $office->image }}">
                     <span class="font-bold">{{ $office->name }}</span>
-                    {{ $office->is_district? '': $office->district_name }}
+                    {{ $office->is_district ? '' : $office->district_name }}
                 </x-table.item-mobile>
             @endforeach
             <x-slot:footer>
