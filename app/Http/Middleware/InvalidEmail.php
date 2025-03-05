@@ -23,7 +23,7 @@ class InvalidEmail
                     ->route('filament.admin.auth.login')
                     ->with(
                         'alert',
-                        'Usupported Email'
+                        __('invalid_email')
                     );
         }
 

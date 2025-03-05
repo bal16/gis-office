@@ -1,0 +1,4 @@
+{
+    "invalid_email": "The email pattern is invalid.",
+    "unverified_admin": "You need to verify your email address and waiting for admin verification to access this page."
+}

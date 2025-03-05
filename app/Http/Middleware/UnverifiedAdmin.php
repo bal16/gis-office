@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class VerifiedAdmin
+class UnverifiedAdmin
 {
     /**
      * Handle an incoming request.
@@ -22,7 +22,7 @@ class VerifiedAdmin
                     ->route('filament.admin.auth.login')
                     ->with(
                         'alert',
-                        'You need to waiting for admin verification.'
+                        __('unverified_admin')
                     );
         }
 

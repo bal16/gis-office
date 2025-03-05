@@ -58,7 +58,7 @@ class AdminPanelProvider extends PanelProvider
                 ])
             ->authMiddleware([
                 Authenticate::class,
-                Middleware\VerifiedAdmin::class,
+                Middleware\UnverifiedAdmin::class,
                 Middleware\InvalidEmail::class,
             ]);
     }
