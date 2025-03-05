@@ -250,7 +250,7 @@ async function handleAJAX(queryParams) {
         }
 
         if (mergedParams.page < 2) {
-            delete mergedParams.q;
+            delete mergedParams.page;
         }
         const queryString = Object.entries(mergedParams)
             .map(([key, value]) => `${key}=${value}`)
