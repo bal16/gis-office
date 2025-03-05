@@ -287,6 +287,20 @@ async function handleAJAX(queryParams) {
             return;
         }
 
+        // Check if data is empty
+        if (totalData === 0) {
+            const noDataMessage = `
+                <tr class="w-full">
+                    <td colspan="4" class="bg-white rounded-2xl shadow-xl text-center px-100 py-3">Tidak ada data.</td>
+                </tr>
+            `;
+            AJAX_ELEMENTS[0].innerHTML = noDataMessage;
+            AJAX_ELEMENTS[1].innerHTML = noDataMessage;
+            AJAX_ELEMENTS[2].innerHTML = `Showing 0 of ${totalData} entries`;
+            AJAX_ELEMENTS[3].innerHTML = ""; // Clear pagination
+            return;
+        }
+
         const listItems = data.map((office) => {
             const desktopItem = makeTableItemElement(office);
             const mobileItem = makeMobileItemElement(office);
