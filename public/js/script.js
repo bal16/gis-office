@@ -320,8 +320,10 @@ async function handleAJAX(queryParams) {
     // Check for unhandled exceptions
     try {
         // Don't send empty string for q to server
-        if (mergedParams.q === "") {
+        if (!mergedParams.q) {
             delete mergedParams.q;
+        } else if (mergedParams.q && !queryParams.page) {
+            delete mergedParams.page;
         }
 
         if (mergedParams.page < 2) {
@@ -331,6 +333,8 @@ async function handleAJAX(queryParams) {
             .map(([key, value]) => `${key}=${value}`)
             .join("&");
 
+
+        // fetch data from API
         let currentPage, data, lastPage, nextPage, previousPage, totalData;
 
         try {
