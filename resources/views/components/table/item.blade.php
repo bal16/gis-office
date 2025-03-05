@@ -1,5 +1,5 @@
-<tr class="bg-white shadow-lg">
-    <td class="rounded-l-xl pl-3 pr-5">
+<tr class="[&>td]:bg-white shadow-lg">
+    <td class=" bg-white rounded-l-xl pl-3 pr-5">
         {{ $number }}
     </td>
     <td class="px-5 text-sm max-w-100 min-w-100">{{ $slot }}</td>

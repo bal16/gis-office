@@ -172,7 +172,7 @@ const makePaginationElement = ({ prev, current, last, next }) => {
  * @returns {string} An HTML string representing a table row element.
  */
 const makeTableItemElement = (office) => `
-            <tr class="bg-white shadow-lg">
+            <tr class="[&>td]:bg-white shadow-lg">
                 <td class="rounded-l-xl pl-3 pr-5">${office.id}</td>
                 <td class="px-5 text-sm max-w-100 min-w-100">
                     <span class="font-bold">${office.name}</span><br />${
@@ -482,7 +482,6 @@ function debounce(func, timeout = 500) {
 window.onscroll = function () {
     scrollFunction();
 };
-
 function scrollFunction() {
     const JUMP = document.getElementById("toTop");
     if (
@@ -495,7 +494,6 @@ function scrollFunction() {
         JUMP.style.display = "none";
     }
 }
-
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
