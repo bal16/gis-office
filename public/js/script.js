@@ -1,16 +1,20 @@
+// ?INFO: Distance Calculator
 const map = L.map(document.createElement("div")).setView([0, 0], 13);
-
 navigator.geolocation.getCurrentPosition(function (location) {
     const latlng = [location.coords.latitude, location.coords.longitude];
     localStorage.setItem("currentLocation", JSON.stringify(latlng));
     L.marker(latlng).addTo(map);
 });
-
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
-
+/**
+ * Calculate the distance between two points on a map
+ * @param {Array<number>} start The starting location, in the format [lat, lng]
+ * @param {Array<number>} end The ending location, in the format [lat, lng]
+ * @param {string} className The class name of the elements that will display the calculated distance
+ */
 function calcDistance(start, end, className) {
     if (!start || !end || !className) {
         console.error("Error: Invalid arguments provided to calcDistance");
@@ -54,27 +58,18 @@ function calcDistance(start, end, className) {
         }
     });
 }
-const getCurrentQuery = () => {
-    try {
-        if (window.location.search === null) {
-            console.error("Error: Null pointer reference in getCurrentQuery");
-            return {};
-        }
 
-        const queryString = window.location.search.split("?")[1]; // "page=1&q=tembalang"
-        const queryParams = queryString.split("&");
-
-        return queryParams.reduce((acc, param) => {
-            const [key, value] = param.split("=");
-            acc[key] = isNaN(value) ? value : Number(value); // Convert value to number if possible
-            return acc;
-        }, {});
-    } catch (error) {
-        console.error("Error: Unhandled exception in getCurrentQuery", error);
-        return {};
-    }
-};
-
+// ?INFO: ELEMENT TEMPLATES
+const makePaginationDots = () =>
+    `<span class="text-primary w-full min-w-7 min-h-7 text-center border-primary border-r block items-center">...</span>`;
+/**
+ * Create the HTML for a pagination item, given the key and current page.
+ *
+ * @param {number} key The key for the pagination item.
+ * @param {number} current The current page.
+ *
+ * @returns {string} The HTML for the pagination item.
+ */
 const makePaginationItem = (key, current) => `<button
                 class="${
                     key === current
@@ -84,10 +79,17 @@ const makePaginationItem = (key, current) => `<button
                 onclick="handleAJAX({ page: ${key} })">
                 ${key}
             </button>`;
-
-const makePaginationDots = () =>
-    `<span class="text-primary w-full min-w-7 min-h-7 text-center border-primary border-r block items-center">...</span>`;
-
+/**
+ * Generates an HTML button string for pagination navigation.
+ *
+ * The button represents either a "Previous" or "Next" navigation action.
+ * If the button is disabled, it will not be clickable and will have a different style.
+ *
+ * @param {string} key - The label for the button, typically "Previous" or "Next".
+ * @param {number} value - The page number associated with the button action.
+ * @param {boolean} [disabled=false] - Whether the button is disabled.
+ * @returns {string} The HTML string for the pagination navigation button.
+ */
 const makePaginationNav = (key, value, disabled = false) => {
     try {
         return `<button
@@ -104,7 +106,20 @@ const makePaginationNav = (key, value, disabled = false) => {
         return "";
     }
 };
-
+/**
+ * Create the HTML for the pagination element, given the current page, the
+ * previous page, the last page, and the next page.
+ *
+ * @param {Object} options
+ * @param {number} options.prev The previous page. If this is less than 1, the
+ * "Previous" button will be disabled.
+ * @param {number} options.current The current page.
+ * @param {number} options.last The last page.
+ * @param {number} options.next The next page. If this is greater than the last
+ * page, the "Next" button will be disabled.
+ *
+ * @returns {string} The HTML for the pagination element.
+ */
 const makePaginationElement = ({ prev, current, last, next }) => {
     let paginationHTML = makePaginationNav("Previous", prev, prev < 1);
 
@@ -139,7 +154,23 @@ const makePaginationElement = ({ prev, current, last, next }) => {
 
     return paginationHTML;
 };
-
+/**
+ * Generates an HTML string representing a table row element for an office.
+ *
+ * The table row includes the office ID, name, and district name (if applicable),
+ * a link to open the location in Google Maps based on the office's latitude and longitude,
+ * a placeholder for distance calculation, and an image of the office.
+ *
+ * @param {Object} office - An object representing the office.
+ * @param {number} office.id - The unique identifier of the office.
+ * @param {string} office.name - The name of the office.
+ * @param {boolean} office.is_district - Flag indicating if the office is a district.
+ * @param {string} office.district_name - The name of the district (if applicable).
+ * @param {number} office.latitude - The latitude of the office location.
+ * @param {number} office.longitude - The longitude of the office location.
+ * @param {string} office.image - The path to the office image.
+ * @returns {string} An HTML string representing a table row element.
+ */
 const makeTableItemElement = (office) => `
             <tr class="bg-white shadow-lg">
                 <td class="rounded-l-xl pl-3 pr-5">${office.id}</td>
@@ -180,7 +211,23 @@ const makeTableItemElement = (office) => `
                 </td>
             </tr>
         `;
-
+/**
+ * Generates a mobile-friendly HTML element string representing an office location.
+ *
+ * The element includes the office name, district name (if applicable), a link to open the location
+ * in Google Maps based on the office's latitude and longitude, a placeholder for distance calculation,
+ * and an image of the office.
+ *
+ * @param {Object} office - The office information.
+ * @param {number} office.id - The unique identifier for the office.
+ * @param {string} office.name - The name of the office.
+ * @param {boolean} office.is_district - Indicates if the office is a district office.
+ * @param {string} office.district_name - The name of the district if not a district office.
+ * @param {string} office.image - The URL or path to the office's image.
+ * @param {string} office.latitude - The latitude coordinate for the office location.
+ * @param {string} office.longitude - The longitude coordinate for the office location.
+ * @returns {string} - A string of HTML representing the mobile office element.
+ */
 const makeMobileItemElement = (office) => `
             <div class="bg-white rounded-xl px-5 py-5 mb-3 shadow-lg text-center">
     <ul>
@@ -227,12 +274,40 @@ const makeMobileItemElement = (office) => `
             </div>
         </li>
     </ul>
-</div>        `;
+</div>`;
 
-let loading = false;
-const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
+// ?INFO: handle AJAX operation
+const getCurrentQuery = () => {
+    try {
+        if (window.location.search === null) {
+            console.error("Error: Null pointer reference in getCurrentQuery");
+            return {};
+        }
 
+        const queryString = window.location.search.split("?")[1]; // "page=1&q=tembalang"
+        const queryParams = queryString.split("&");
+
+        return queryParams.reduce((acc, param) => {
+            const [key, value] = param.split("=");
+            acc[key] = isNaN(value) ? value : Number(value); // Convert value to number if possible
+            return acc;
+        }, {});
+    } catch (error) {
+        console.error("Error: Unhandled exception in getCurrentQuery", error);
+        return {};
+    }
+};
+/**
+ * Handles AJAX operations for searching and pagination.
+ *
+ * @param {Object} queryParams - The object containing query parameters.
+ * @param {string} [queryParams.q] - The search query string. Defaults to empty string.
+ * @param {number} [queryParams.page] - The page number. Defaults to 1.
+ *
+ * @async
+ */
 async function handleAJAX(queryParams) {
+    const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
     const currentQuery = getCurrentQuery();
     const mergedParams = { ...currentQuery, ...queryParams };
 
@@ -355,7 +430,13 @@ async function handleAJAX(queryParams) {
         return;
     }
 }
-
+/**
+ * Handles search bar input. It debounces the input by 500ms and
+ * calls handleAJAX with the given query string.
+ *
+ * @param {Event} e - The event object containing the target element
+ * @returns {Promise<void>} - A promise that resolves when the debounced function is called
+ */
 async function handleSearch(e) {
     // Check for null pointer references
     if (e === null || e.target === null) {
@@ -373,7 +454,15 @@ async function handleSearch(e) {
         console.error("Error: Unhandled exception in handleSearch", error);
     }
 }
-
+/**
+ * Returns a debounced version of the given function. The returned function will
+ * only be triggered after the given timeout period has passed since the last
+ * time the function was called.
+ *
+ * @param {function} func - The function to debounce
+ * @param {number} [timeout=500] - The timeout period in milliseconds (default=500ms)
+ * @returns {function} The debounced function
+ */
 function debounce(func, timeout = 500) {
     let timer;
     return (...args) => {
@@ -384,13 +473,14 @@ function debounce(func, timeout = 500) {
     };
 }
 
-const JUMP = document.getElementById("toTop");
 
+// ? INFO:Scroll to top feature
 window.onscroll = function () {
     scrollFunction();
 };
 
 function scrollFunction() {
+    const JUMP = document.getElementById("toTop");
     if (
         document.body.scrollTop > 20 ||
         document.documentElement.scrollTop > 20
@@ -402,8 +492,8 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
