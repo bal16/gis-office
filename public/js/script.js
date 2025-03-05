@@ -383,3 +383,27 @@ function debounce(func, timeout = 500) {
         }, timeout);
     };
 }
+
+const JUMP = document.getElementById("toTop");
+
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+    ) {
+        console.log("show");
+        JUMP.style.display = "block";
+    } else {
+        JUMP.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
