@@ -1,9 +1,17 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "gis/offices",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Geographic Information System (GIS) for displaying and managing the locations of Kantor Kelurahan (sub-district offices) and Kantor Kecamatan (district offices) in Kota Semarang.",
+    "keywords": [
+        "laravel",
+        "filament",
+        "tailwind",
+        "leaflet",
+        "GIS",
+        "offices",
+        "semarang"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",

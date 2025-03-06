@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         Models\User::factory()->create([
             'name' => 'admin',
-            'email' => "admin".env('APP_EMAIL', '@tabel.dev'),
+            'email' => "admin".env('APP_EMAIL', '@gis.dev'),
             'password' => Hash::make('A2345678'),
             'accepted_at' => now(),
             'email_verified_at' => now(),
@@ -28,14 +28,14 @@ class DatabaseSeeder extends Seeder
 
         Models\User::factory()->create([
             'name' => 'unaccepted admin',
-            'email' => "unaccepted".env('APP_EMAIL', '@tabel.dev'),
+            'email' => "unaccepted".env('APP_EMAIL', '@gis.dev'),
             'password' => Hash::make('A2345678'),
             'email_verified_at' => now(),
         ]);
 
         Models\User::factory()->create([
             'name' => 'unverified email',
-            'email' => "unverified".env('APP_EMAIL', '@tabel.dev'),
+            'email' => "unverified".env('APP_EMAIL', '@gis.dev'),
             'password' => Hash::make('A2345678'),
         ]);
 

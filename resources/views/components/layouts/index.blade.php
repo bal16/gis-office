@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GIS</title>
+    <title>{{ config('app.name', 'GIS-Offices') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,8 +19,8 @@
 <body class="relative font-raleway antialiased bg-gray-100">
     <button onclick="topFunction()" id="toTop" title="Go to top"
         class="hidden fixed bottom-5 right-5 z-99 text-2 cursor-pointer bg-primary text-white p-3 rounded-full shadow-xl hover:bg-white hover:text-primary transition-colors duration-250">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" version="1.1"
-            id="Capa_1" viewBox="0 0 462.847 462.847" xml:space="preserve" class="size-5">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor"
+            version="1.1" id="Capa_1" viewBox="0 0 462.847 462.847" xml:space="preserve" class="size-5">
             <g>
                 <g>
                     <path
