@@ -59,57 +59,58 @@ This project is a **Geographic Information System (GIS)** for displaying and man
     ```
 3. Install the PHP dependencies:
 
-4. composer install
-
-5. Copy the example environment file:
+   ```bash
+   composer install
+   ```
+4. Copy the example environment file:
 
     ```bash
     cp .env.example .env
     ```
 
-6. Generate the application key:
+5. Generate the application key:
 
     ```bash
     php artisan key:generate
     ```
-7. Configure your .env file with your database and other application settings.
+6. Configure your .env file with your database and other application settings.
 
-8. Run database migrations and seed the database:
+7. Run database migrations and seed the database:
 
     ```bash
     php artisan migrate --seed
     ```
-9. Install JavaScript dependencies:
+8. Install JavaScript dependencies:
 
     ```bash
     npm install
     ```
-10. Link the storage assets:
+9.  Link the storage assets:
 
     ```bash 
     php artisan storage:link
     ```
-11. Start the development server:
+10. Start the development server:
 
     ```bash 
     composer run dev
     ```
 
-12. The application should now be running on http://localhost:8000.
+11. The application should now be running on http://localhost:8000.
 
 #### For Production Deployment:
-11. Run asset builder:
+10. Run asset builder:
     
     ```bash
     npm run build
     ```
-12. Start the Queue worker
+11. Start the Queue worker
     
     ```bash
     php artisan queue:work
     ```
-13. Routes the Requests of your php server to /public/index.php
-14. The application should now accessed on your server
+12. Routes the Requests of your php server to /public/index.php
+13. The application should now accessed on your server
 
 ## Acknowledgements
 
