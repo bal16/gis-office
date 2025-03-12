@@ -31,21 +31,4 @@ class Office extends Model
         return $this->belongsTo(District::class);
     }
 
-
-    /**
-     * Retrieves a list of offices, including their associated district names,
-     * filtered by a search term. The search is performed on the office name
-     * and district name.
-     *
-     * @param string $search The search term to filter office and district names.
-     * @return \App\Models\Office The Office model as a query builder instance with the applied filters.
-     */
-    public static function customIndex($search){
-        $offices = static::select('offices.id', 'offices.name', 'districts.name as district_name', 'offices.longitude', 'offices.latitude', 'offices.image', 'offices.is_district')
-                        ->join('districts', 'districts.id', '=', 'offices.district_id')
-                        ->where('offices.name', 'like', "%$search%")
-                        ->orWhere('districts.name', 'like', "%$search%");
-
-        return $offices;
-    }
 }
