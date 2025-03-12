@@ -16,6 +16,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
  * @param {string} className The class name of the elements that will display the calculated distance
  */
 function calcDistance(start, end, className) {
+    const ELEMENTS = document.getElementsByClassName(className);
     if (!start || !end || !className) {
         console.error("Error: Invalid arguments provided to calcDistance");
         ELEMENTS[0].innerHTML = "Jarak tidak ditemukan.";
@@ -37,7 +38,6 @@ function calcDistance(start, end, className) {
             let distance = route.summary.totalDistance;
             distance = (distance / 1000).toFixed(2) + " km";
 
-            const ELEMENTS = document.getElementsByClassName(className);
             if (ELEMENTS.length < 2) {
                 console.error(
                     "Error: Not enough elements found with the given class name"
