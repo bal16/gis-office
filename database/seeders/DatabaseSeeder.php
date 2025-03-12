@@ -26,24 +26,24 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        Models\User::factory()->create([
-            'name' => 'unaccepted admin',
-            'email' => "unaccepted".env('APP_EMAIL', '@gis.dev'),
-            'password' => Hash::make('A2345678'),
-            'email_verified_at' => now(),
-        ]);
+        // Models\User::factory()->create([
+        //     'name' => 'unaccepted admin',
+        //     'email' => "unaccepted".env('APP_EMAIL', '@gis.dev'),
+        //     'password' => Hash::make('A2345678'),
+        //     'email_verified_at' => now(),
+        // ]);
 
-        Models\User::factory()->create([
-            'name' => 'unverified email',
-            'email' => "unverified".env('APP_EMAIL', '@gis.dev'),
-            'password' => Hash::make('A2345678'),
-        ]);
+        // Models\User::factory()->create([
+        //     'name' => 'unverified email',
+        //     'email' => "unverified".env('APP_EMAIL', '@gis.dev'),
+        //     'password' => Hash::make('A2345678'),
+        // ]);
 
-        Models\User::factory()->create([
-            'name' => 'wrong format test',
-            'email' => 'test@gmail.com',
-            'password' => Hash::make('A2345678'),
-        ]);
+        // Models\User::factory()->create([
+        //     'name' => 'wrong format test',
+        //     'email' => 'test@gmail.com',
+        //     'password' => Hash::make('A2345678'),
+        // ]);
 
         // unzip file images.zip
         $zip = new \ZipArchive;

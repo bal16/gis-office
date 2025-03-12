@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name', 25);
             $table->unsignedInteger('district_id');
-            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');
+            $table->foreign('district_id')
+                    ->references('id')
+                    ->on('districts')
+                    ->onDelete('cascade');
 
             $table->boolean('is_district');
             $table->string('longitude');
