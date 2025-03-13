@@ -11,7 +11,6 @@
                 <td class="pr-3">Foto</td>
             </tr>
         </thead>
-
         <tbody class="ajax-content">
             {{ $body }}
         </tbody>

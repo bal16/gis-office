@@ -8,12 +8,10 @@
                 <x-search />
             </x-slot:header>
             <x-slot:body>
-
                 <tr class="w-full" id="not-found" @if ($offices->count() > 0) style="display: none;" @endif>
                     <td colspan="4" class="bg-white rounded-2xl shadow-xl text-center px-100 py-3">Tidak ada data.
                     </td>
                 </tr>
-
                 @foreach ($offices as $office)
                     <x-table.item key="{{ $office->id }}" number="{{ $office->id }}"
                         longitude="{{ $office->longitude }}" latitude="{{ $office->latitude }}"

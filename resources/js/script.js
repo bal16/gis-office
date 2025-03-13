@@ -89,7 +89,6 @@ async function handleAJAX(queryParams) {
             },
             ["", ""]
         );
-
         const newUrl = `${window.location.origin}/?${new URLSearchParams(
             mergedParams
         ).toString()}`;
@@ -99,12 +98,8 @@ async function handleAJAX(queryParams) {
 
         refreshFsLightbox();
         handlePageNav();
-        if (totalData === 0) {
-            document.getElementById("not-found").style.display = "table-row";
-            return;
-        }
-
         renderContent(desktopList, mobileList, data.length, totalData);
+
         console.log("🚀 ~ handleAJAX ~ currentLocation:", currentLocation);
         if (currentLocation.length > 1) {
             setTimeout(() => {
@@ -137,9 +132,18 @@ async function handleAJAX(queryParams) {
  */
 function renderContent(desktopList, mobileList, dataLength, totalData) {
     const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
+    AJAX_ELEMENTS[2].innerHTML = `Showing ${dataLength} of ${totalData} entries`;
+    if (dataLength === 0) {
+        const component = `<tr class="w-full" id="not-found">
+                    <td colspan="4" class="bg-white rounded-2xl shadow-xl text-center px-100 py-3">Tidak ada data.
+                    </td>
+                </tr>`;
+        AJAX_ELEMENTS[0].innerHTML = component;
+        AJAX_ELEMENTS[1].innerHTML = component;
+        return;
+    }
     AJAX_ELEMENTS[0].innerHTML = desktopList;
     AJAX_ELEMENTS[1].innerHTML = mobileList;
-    AJAX_ELEMENTS[2].innerHTML = `Showing ${dataLength} of ${totalData} entries`;
 }
 /**
  * Renders pagination to the page
@@ -160,7 +164,7 @@ function renderPagination(currentPage, lastPage, nextPage, previousPage) {
 }
 
 const searchEl = document.getElementById("search");
-searchEl.value = getCurrentQuery().q || "";
+// searchEl.value = decodeURI(getCurrentQuery().q || "");
 searchEl.addEventListener("keyup", (e) => {
     // Check for null pointer references
     if (e === null || e.target === null) {
