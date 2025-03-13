@@ -35,13 +35,11 @@ async function handleAJAX(queryParams) {
     const currentQuery = getCurrentQuery();
     const mergedParams = { ...currentQuery, ...queryParams };
 
-    // Check for null pointer references
     if (queryParams === null || queryParams === undefined) {
         // console.error("Error: Null pointer reference in handleAJAX");
         return;
     }
 
-    // Check for unhandled exceptions
     try {
         // Don't send empty string for q to server
         if (!mergedParams.q) {
@@ -89,18 +87,18 @@ async function handleAJAX(queryParams) {
             },
             ["", ""]
         );
+
         const newUrl = `${window.location.origin}/?${new URLSearchParams(
             mergedParams
         ).toString()}`;
         history.pushState({}, "", newUrl);
 
-        renderPagination(currentPage, lastPage, nextPage, previousPage);
 
+        renderPagination(currentPage, lastPage, nextPage, previousPage);
+        renderContent(desktopList, mobileList, data.length, totalData);
         refreshFsLightbox();
         handlePageNav();
-        renderContent(desktopList, mobileList, data.length, totalData);
 
-        console.log("🚀 ~ handleAJAX ~ currentLocation:", currentLocation);
         if (currentLocation.length > 1) {
             setTimeout(() => {
                 data.forEach((office) => {
@@ -164,23 +162,10 @@ function renderPagination(currentPage, lastPage, nextPage, previousPage) {
 }
 
 const searchEl = document.getElementById("search");
-// searchEl.value = decodeURI(getCurrentQuery().q || "");
-searchEl.addEventListener("keyup", (e) => {
-    // Check for null pointer references
-    if (e === null || e.target === null) {
-        // console.error("Error: Null pointer reference in handleSearch");
-        return;
-    }
-
-    // Check for unhandled exceptions
-    try {
-        // Debounce
-        debounce(async () => {
-            await handleAJAX({ q: e.target.value });
-        })();
-    } catch (error) {
-        // console.error("Error: Unhandled exception in handleSearch", error);
-    }
+searchEl.value = new URLSearchParams(window.location.search).get("q") ?? "";
+const onInput = debounce(handleAJAX);
+searchEl.addEventListener("input", (e) => {
+    onInput({ q: e.target.value });
 });
 
 // ? INFO:Scroll to top feature

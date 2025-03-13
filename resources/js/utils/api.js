@@ -1,4 +1,3 @@
-
 /**
  * Fetch data from API
  *

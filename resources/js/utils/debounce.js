@@ -7,7 +7,7 @@
  * @param {number} [timeout=500] - The timeout period in milliseconds (default=500ms)
  * @returns {function} The debounced function
  */
-export function debounce(func, timeout = 500) {
+export const debounce =(func, timeout = 500) => {
     let timer;
     return (...args) => {
         clearTimeout(timer);
