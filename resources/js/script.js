@@ -1,3 +1,9 @@
+import "./vendor/leaflet/leaflet";
+import "./vendor/leaflet/leaflet.css";
+import "./vendor/leaflet-routing/leaflet-routing-machine";
+import "./vendor/leaflet-routing/leaflet-routing-machine.js";
+import "./vendor/fslightbox/fslightbox";
+
 // ?INFO: Distance Calculator
 const map = L.map(document.createElement("div")).setView([0, 0], 13);
 const distanceEls = document.getElementsByClassName("distance"); //htmlCollection
@@ -391,6 +397,11 @@ async function handleAJAX(queryParams) {
         const data = apiData;
         const totalData = total;
 
+        if (totalData === 0) {
+            document.getElementById("not-found").style.display = "table-row";
+            return;
+        }
+
         const listItems = data.map((office) => {
             const desktopItem = makeTableItemElement(office);
             const mobileItem = makeMobileItemElement(office);
@@ -417,15 +428,17 @@ async function handleAJAX(queryParams) {
 
         refreshFsLightbox();
 
-        setTimeout(() => {
-            data.forEach((office) => {
-                calcDistance(
-                    currentLocation,
-                    [office.latitude, office.longitude],
-                    `jarak-${office.id}`
-                );
-            });
-        }, 5000);
+        if (currentLocation.length > 1) {
+            setTimeout(() => {
+                data.forEach((office) => {
+                    calcDistance(
+                        currentLocation,
+                        [office.latitude, office.longitude],
+                        `jarak-${office.id}`
+                    );
+                });
+            }, 5000);
+        }
 
         handlePageNav();
     } catch (error) {
@@ -527,10 +540,10 @@ function debounce(func, timeout = 500) {
 
 // ? INFO:Scroll to top feature
 const JUMP = document.getElementById("toTop");
-JUMP.addEventListener('click', ()=>{
+JUMP.addEventListener("click", () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-})
+});
 window.onscroll = function () {
     scrollFunction();
 };
@@ -545,4 +558,3 @@ function scrollFunction() {
         JUMP.style.display = "none";
     }
 }
-
