@@ -22,8 +22,8 @@ This project is a **Geographic Information System (GIS)** for displaying and man
 - **Localization Support**:  
   Multilingual support for **English** and **Indonesian (ID)**.
 
-  
 ## Routes
+
 - `/` : The home page displaying the table and office search.
 - `/admin` : Admin panel for managing office data and settings.
 - `/api` : API endpoints for accessing office data programmatically.
@@ -57,11 +57,13 @@ This project is a **Geographic Information System (GIS)** for displaying and man
     ```bash
     cd gis-office
     ```
+
 3. Install the PHP dependencies:
 
    ```bash
    composer install
    ```
+
 4. Copy the example environment file:
 
     ```bash
@@ -73,6 +75,7 @@ This project is a **Geographic Information System (GIS)** for displaying and man
     ```bash
     php artisan key:generate
     ```
+
 6. Configure your .env file with your database and other application settings.
 
 7. Run database migrations and seed the database:
@@ -80,46 +83,51 @@ This project is a **Geographic Information System (GIS)** for displaying and man
     ```bash
     php artisan migrate --seed
     ```
+
 8. Install JavaScript dependencies:
 
     ```bash
     npm install
     ```
-9.  Link the storage assets:
 
-    ```bash 
+9. Link the storage assets:
+
+    ```bash
     php artisan storage:link
     ```
+
 10. Start the development server:
 
-    ```bash 
+    ```bash
     composer run dev
     ```
 
-11. The application should now be running on http://localhost:8000.
+11. The application should now be running on <http://localhost:8000>.
 
-#### For Production Deployment:
+#### For Production Deployment
+
 10. Run asset builder:
-    
+
     ```bash
     npm run build
     ```
+
 11. Start the Queue worker
-    
+
     ```bash
     php artisan queue:work
     ```
-12. Routes the Requests of your php server to /public/index.php
+
+12. Routes the Requests of your php server to </public/index.php>
 13. The application should now accessed on your server
 
 ## Acknowledgements
 
-- Laravel: https://laravel.com/
-- Filament: https://filamentadmin.com/
-- Leaflet.js: https://leafletjs.com/
-- Tailwind CSS: https://tailwindcss.com/
+- Laravel: <https://laravel.com/>
+- Filament: <https://filamentadmin.com/>
+- Leaflet.js: <https://leafletjs.com/>
+- Tailwind CSS: <https://tailwindcss.com/>
 
 ## See also
 
-* [LARAVEL.md](LARAVEL.md): For additional information and configuration related to the Laravel framework used in this project.
-
+- [LARAVEL.md](LARAVEL.md): For additional information and configuration related to the Laravel framework used in this project.
