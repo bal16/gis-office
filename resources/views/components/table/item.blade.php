@@ -9,7 +9,12 @@
             Buka Map
         </a>
         <br />
-        <span class="flex inline-text pt-2 {{ "jarak-$number" }}"><svg class="mr-3 -ml-1 size-5 animate-spin text-black"
+        <span
+            class="flex inline-text pt-2 distance {{ "jarak-$number" }}"
+            data-distance="{{ $number }}"
+            data-lat="{{ $latitude }}"
+            data-lng="{{ $longitude }}">
+            <svg class="mr-3 -ml-1 size-5 animate-spin text-black"
                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
                 </circle>
@@ -25,12 +30,4 @@
                 class="rounded-xl h-60 w-60 object-cover shadow-md hover:scale-105 transition-transform" />
         </a>
     </td>
-    <script>
-        //get location from local storage
-        setTimeout(() => {
-            calcDistance(JSON.parse(localStorage.getItem("currentLocation")), [{{ $latitude }},
-                {{ $longitude }}
-            ], "jarak-{{ $number }}");
-        }, 2000)
-    </script>
 </tr>

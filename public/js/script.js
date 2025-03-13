@@ -1,10 +1,33 @@
 // ?INFO: Distance Calculator
 const map = L.map(document.createElement("div")).setView([0, 0], 13);
-navigator.geolocation.getCurrentPosition(function (location) {
-    const latlng = [location.coords.latitude, location.coords.longitude];
-    localStorage.setItem("currentLocation", JSON.stringify(latlng));
-    L.marker(latlng).addTo(map);
-});
+const distanceEls = document.getElementsByClassName("distance"); //htmlCollection
+let currentLocation = [];
+
+navigator.geolocation.getCurrentPosition(
+    (location) => {
+        const latlng = [location.coords.latitude, location.coords.longitude];
+        L.marker(latlng).addTo(map);
+        currentLocation = latlng;
+        Array.from(distanceEls).forEach((el) => {
+            calcDistance(
+                latlng,
+                [el.getAttribute("data-lat"), el.getAttribute("data-lng")],
+                `jarak-${el.getAttribute("data-distance")}`
+            );
+        });
+    },
+    () => {
+        Array.from(distanceEls).forEach((el) => {
+            const elements = document.getElementsByClassName(
+                `jarak-${el.getAttribute("data-distance")}`
+            );
+            Array.from(elements).forEach(
+                (el) => (el.innerHTML = "Jarak tidak ditemukan.")
+            );
+        });
+    }
+);
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -59,6 +82,17 @@ function calcDistance(start, end, className) {
     });
 }
 
+function handlePageNav() {
+    document.querySelectorAll(".page-nav").forEach((el) => {
+        el.addEventListener("click", () => {
+            const target = parseInt(el.getAttribute("data-target"));
+            handleAJAX({ page: target });
+        });
+    });
+}
+
+handlePageNav();
+
 // ?INFO: ELEMENT TEMPLATES
 const makePaginationDots = () =>
     `<span class="text-primary w-full min-w-7 min-h-7 text-center border-primary border-r block items-center">...</span>`;
@@ -71,12 +105,12 @@ const makePaginationDots = () =>
  * @returns {string} The HTML for the pagination item.
  */
 const makePaginationItem = (key, current) => `<button
-                class="${
+                class="page-nav ${
                     key === current
                         ? "max-w-8 text-white bg-primary"
                         : "text-primary"
                 } full min-w-7 min-h-7 border-primary border-r text-center items-center cursor-pointer"
-                onclick="handleAJAX({ page: ${key} })">
+                data-target="${key}">
                 ${key}
             </button>`;
 /**
@@ -93,10 +127,11 @@ const makePaginationItem = (key, current) => `<button
 const makePaginationNav = (key, value, disabled = false) => {
     try {
         return `<button
-            class="px-2 min-w-20 min-h-7 cursor-pointer text-center items-center disabled:text-gray-500 ${
+            class="page-nav px-2 min-w-20 min-h-7 cursor-pointer text-center items-center disabled:text-gray-500 ${
                 key === "Previous" ? "border-primary border-r" : ""
             } disabled:cursor-not-allowed"
-            onclick="handleAJAX({ page: ${value} })"
+            data-target="${value}"
+            id="${key}"
             ${disabled ? "disabled" : ""}
             >
             ${key}
@@ -189,9 +224,14 @@ const makeTableItemElement = (office) => `
                     >
                         Buka Map
                     </a><br />
-                    <span class="flex inline-text pt-2 jarak-${
+                    <span class="flex inline-text pt-2 distance jarak-${
                         office.id
-                    }"><svg class="mr-3 -ml-1 size-5 animate-spin text-black"
+                    }"
+                    data-distance="${office.id}"
+            data-lat="${office.latitude}"
+            data-lng="${
+                office.longitude
+            }"><svg class="mr-3 -ml-1 size-5 animate-spin text-black"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor"
@@ -285,7 +325,9 @@ const getCurrentQuery = () => {
         }
 
         const queryString = window.location.search.split("?")[1]; // "page=1&q=tembalang"
-        const queryParams = queryString.split("&");
+        const queryParams = queryString.includes("&")
+            ? queryString.split("&")
+            : [queryString];
 
         return queryParams.reduce((acc, param) => {
             const [key, value] = param.split("=");
@@ -307,7 +349,6 @@ const getCurrentQuery = () => {
  * @async
  */
 async function handleAJAX(queryParams) {
-    const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
     const currentQuery = getCurrentQuery();
     const mergedParams = { ...currentQuery, ...queryParams };
 
@@ -329,56 +370,26 @@ async function handleAJAX(queryParams) {
         if (mergedParams.page < 2) {
             delete mergedParams.page;
         }
-        const queryString = Object.entries(mergedParams)
-            .map(([key, value]) => `${key}=${value}`)
-            .join("&");
 
+        const response = await fetchApi(mergedParams);
+        const {
+            current_page,
+            last_page,
+            data: apiData,
+            total,
+        } = await response.json();
 
-        // fetch data from API
-        let currentPage, data, lastPage, nextPage, previousPage, totalData;
+        const currentPage = current_page;
+        const lastPage = last_page;
+        const nextPage = currentPage + 1;
+        const previousPage = currentPage - 1;
 
-        try {
-            const response = await fetch(`/api?${queryString}`);
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-
-            const {
-                current_page,
-                last_page,
-                data: apiData,
-                total,
-            } = await response.json();
-            currentPage = current_page;
-            lastPage = last_page;
-            nextPage = currentPage + 1;
-            previousPage = currentPage - 1;
-
-            // Fix bug when page < 2
-            if (previousPage < 2) {
-                delete mergedParams.page;
-            }
-
-            data = apiData;
-            totalData = total;
-        } catch (error) {
-            console.error("Error: Exception in handleAJAX", error);
-            return;
+        if (previousPage < 1) {
+            delete mergedParams.page;
         }
 
-        // Check if data is empty
-        if (totalData === 0) {
-            const noDataMessage = `
-                <tr class="w-full">
-                    <td colspan="4" class="bg-white rounded-2xl shadow-xl text-center px-100 py-3">Tidak ada data.</td>
-                </tr>
-            `;
-            AJAX_ELEMENTS[0].innerHTML = noDataMessage;
-            AJAX_ELEMENTS[1].innerHTML = noDataMessage;
-            AJAX_ELEMENTS[2].innerHTML = `Showing 0 of ${totalData} entries`;
-            AJAX_ELEMENTS[3].innerHTML = ""; // Clear pagination
-            return;
-        }
+        const data = apiData;
+        const totalData = total;
 
         const listItems = data.map((office) => {
             const desktopItem = makeTableItemElement(office);
@@ -396,34 +407,27 @@ async function handleAJAX(queryParams) {
             ["", ""]
         );
 
-        const newUrl = `${window.location.origin}/?${queryString}`;
+        const newUrl = `${window.location.origin}/?${new URLSearchParams(
+            mergedParams
+        ).toString()}`;
         history.pushState({}, "", newUrl);
-        AJAX_ELEMENTS[0].innerHTML = desktopList;
-        AJAX_ELEMENTS[1].innerHTML = mobileList;
-        AJAX_ELEMENTS[2].innerHTML = `Showing ${data.length} of ${totalData} entries`;
-        AJAX_ELEMENTS[3].innerHTML = makePaginationElement({
-            current: currentPage,
-            last: lastPage,
-            next: nextPage,
-            prev: previousPage,
-        });
+
+        renderContent(desktopList, mobileList, data.length, totalData);
+        renderPagination(currentPage, lastPage, nextPage, previousPage);
 
         refreshFsLightbox();
 
         setTimeout(() => {
             data.forEach((office) => {
-                const currentLocation = JSON.parse(
-                    localStorage.getItem("currentLocation")
+                calcDistance(
+                    currentLocation,
+                    [office.latitude, office.longitude],
+                    `jarak-${office.id}`
                 );
-                if (currentLocation) {
-                    calcDistance(
-                        currentLocation,
-                        [office.latitude, office.longitude],
-                        `jarak-${office.id}`
-                    );
-                }
             });
         }, 5000);
+
+        handlePageNav();
     } catch (error) {
         console.error(
             "Error: Unhandled exception in handleAJAX, queryParams: ",
@@ -434,14 +438,59 @@ async function handleAJAX(queryParams) {
         return;
     }
 }
+
 /**
- * Handles search bar input. It debounces the input by 500ms and
- * calls handleAJAX with the given query string.
+ * Fetch data from API
  *
- * @param {Event} e - The event object containing the target element
- * @returns {Promise<void>} - A promise that resolves when the debounced function is called
+ * @param {Object} queryParams - The object containing query parameters.
+ * @returns {Promise<Response>} - A promise that resolves with the response object
  */
-async function handleSearch(e) {
+async function fetchApi(queryParams) {
+    const queryString = new URLSearchParams(queryParams).toString();
+    const response = await fetch(`/api?${queryString}`);
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+
+    return response;
+}
+
+/**
+ * Renders content to the page
+ *
+ * @param {string} desktopList - The list of desktop items
+ * @param {string} mobileList - The list of mobile items
+ * @param {number} dataLength - The length of the data array
+ * @param {number} totalData - The total number of data
+ */
+function renderContent(desktopList, mobileList, dataLength, totalData) {
+    const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
+    AJAX_ELEMENTS[0].innerHTML = desktopList;
+    AJAX_ELEMENTS[1].innerHTML = mobileList;
+    AJAX_ELEMENTS[2].innerHTML = `Showing ${dataLength} of ${totalData} entries`;
+}
+
+/**
+ * Renders pagination to the page
+ *
+ * @param {number} currentPage - The current page number
+ * @param {number} lastPage - The last page number
+ * @param {number} nextPage - The next page number
+ * @param {number} previousPage - The previous page number
+ */
+function renderPagination(currentPage, lastPage, nextPage, previousPage) {
+    const AJAX_ELEMENTS = document.getElementsByClassName("ajax-content");
+    AJAX_ELEMENTS[3].innerHTML = makePaginationElement({
+        current: currentPage,
+        last: lastPage,
+        next: nextPage,
+        prev: previousPage,
+    });
+}
+
+const searchEl = document.getElementById("search");
+searchEl.value = getCurrentQuery().q || "";
+searchEl.addEventListener("keyup", (e) => {
     // Check for null pointer references
     if (e === null || e.target === null) {
         console.error("Error: Null pointer reference in handleSearch");
@@ -457,7 +506,8 @@ async function handleSearch(e) {
     } catch (error) {
         console.error("Error: Unhandled exception in handleSearch", error);
     }
-}
+});
+// function handleSearch(e)
 /**
  * Returns a debounced version of the given function. The returned function will
  * only be triggered after the given timeout period has passed since the last
@@ -471,19 +521,20 @@ function debounce(func, timeout = 500) {
     let timer;
     return (...args) => {
         clearTimeout(timer);
-        timer = setTimeout(() => {
-            func.apply(this, args);
-        }, timeout);
+        timer = setTimeout(() => func(...args), timeout);
     };
 }
 
-
 // ? INFO:Scroll to top feature
+const JUMP = document.getElementById("toTop");
+JUMP.addEventListener('click', ()=>{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
 window.onscroll = function () {
     scrollFunction();
 };
 function scrollFunction() {
-    const JUMP = document.getElementById("toTop");
     if (
         document.body.scrollTop > 20 ||
         document.documentElement.scrollTop > 20
@@ -493,9 +544,5 @@ function scrollFunction() {
     } else {
         JUMP.style.display = "none";
     }
-}
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
 }
 

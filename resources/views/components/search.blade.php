@@ -6,6 +6,9 @@
                 clip-rule="evenodd" />
         </svg>
     </div>
-    <input type="text" placeholder="Cari Data..." name="search"
-        class="bg-white py-1 rounded-full w-full pl-10 pr-3 mb-3" onkeyup="handleSearch(event)" />
+    <input type="text"
+        placeholder="Cari Data..."
+        name="search"
+        id="search"
+        class="bg-white py-1 rounded-full w-full pl-10 pr-3 mb-3" />
 </div>
