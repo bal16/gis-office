@@ -5,11 +5,11 @@ import {
     makeTableItemElement,
     getCurrentQuery,
     fetchApi,
-    debounce
+    debounce,
 } from "./utils";
 import { currentLocation } from "./const";
-import "./distance"
-
+import "./map";
+import { calcDistance } from "./utils/distance";
 
 function handlePageNav() {
     document.querySelectorAll(".page-nav").forEach((el) => {
@@ -74,11 +74,6 @@ async function handleAJAX(queryParams) {
         const data = apiData;
         const totalData = total;
 
-        if (totalData === 0) {
-            document.getElementById("not-found").style.display = "table-row";
-            return;
-        }
-
         const listItems = data.map((office) => {
             const desktopItem = makeTableItemElement(office);
             const mobileItem = makeMobileItemElement(office);
@@ -100,11 +95,17 @@ async function handleAJAX(queryParams) {
         ).toString()}`;
         history.pushState({}, "", newUrl);
 
-        renderContent(desktopList, mobileList, data.length, totalData);
         renderPagination(currentPage, lastPage, nextPage, previousPage);
 
         refreshFsLightbox();
+        handlePageNav();
+        if (totalData === 0) {
+            document.getElementById("not-found").style.display = "table-row";
+            return;
+        }
 
+        renderContent(desktopList, mobileList, data.length, totalData);
+        console.log("🚀 ~ handleAJAX ~ currentLocation:", currentLocation);
         if (currentLocation.length > 1) {
             setTimeout(() => {
                 data.forEach((office) => {
@@ -116,8 +117,6 @@ async function handleAJAX(queryParams) {
                 });
             }, 5000);
         }
-
-        handlePageNav();
     } catch (error) {
         // console.error(
         //     "Error: Unhandled exception in handleAJAX, queryParams: ",
