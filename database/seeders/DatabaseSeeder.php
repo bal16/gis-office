@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
                 $randomString = Str::random(40);
                 $hashedFileName = "offices/$randomString.$extension";
 
-                Storage::disk('public')->put($hashedFileName, $imageContent);
+                Storage::put($hashedFileName, $imageContent);
 
                 $office->image = $hashedFileName;
             }

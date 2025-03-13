@@ -48,7 +48,6 @@ class DistrictResource extends Resource
                                 ->required(),
                         Forms\Components\FileUpload::make('image')
                                 ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                                ->disk('public')
                                 ->directory('offices')
                                 ->enableOpen()
                                 ->imageResizeMode('cover')

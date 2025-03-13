@@ -44,7 +44,6 @@ class OfficeResource extends Resource
                                 ->required(),
                         Forms\Components\FileUpload::make('image')
                                 ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                                ->disk('public')
                                 ->directory('offices')
                                 ->enableOpen()
                                 ->imageResizeMode('cover')
@@ -110,7 +109,7 @@ class OfficeResource extends Resource
     private static function handleDeleteImage($image)
     {
         if($image) {
-            Storage::disk('public')->delete($image);
+            Storage::delete($image);
         }
     }
 

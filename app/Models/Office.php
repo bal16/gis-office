@@ -22,7 +22,7 @@ class Office extends Model
         parent::boot();
         static::updating(function ($model) {
             if($model->isDirty('image') && ($model->getOriginal('image') !== null)) {
-                Storage::disk('public')->delete($model->getOriginal('image'));
+                Storage::delete($model->getOriginal('image'));
             }
         });
     }
