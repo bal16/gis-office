@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources;
 
-use App\Livewire;
 use App\Filament\Resources\DistrictResource\Pages;
 use App\Filament\Resources\DistrictResource\RelationManagers;
 use App\Models\District;
@@ -24,57 +23,63 @@ class DistrictResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Section::make('District Information')
-                        ->schema([
-                            Forms\Components\TextInput::make('name')
-                                ->label('District Name')
-                                ->maxLength(25)
-                                ->required(),
-                            ]),
-                Forms\Components\Repeater::make('offices')
-                    ->columnSpanFull()
-                    ->relationship('offices')
-                    // ->maxItems(1)
-                    ->defaultItems(0)
+                Forms\Components\Tabs::make('')->schema([
+                    Forms\Components\Tabs\Tab::make('District Information*')
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                                ->label('Office Name')
-                                ->maxLength(25)
-                                ->required(),
-                        Forms\Components\Select::make('is_district')
-                                ->label('Office Of')
-                                ->default(true)
-                                ->options([true => 'District', false => 'Village'])
-                                ->required(),
-                        Forms\Components\FileUpload::make('image')
-                                ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                                ->directory('offices')
-                                ->enableOpen()
-                                ->imageResizeMode('cover')
-                                ->imageResizeTargetWidth('1920')
-                                ->imageResizeTargetHeight('1080')
-                                ->imageEditor()
-                                ->required(),
-                        Forms\Components\TextInput::make('map_url')
-                            ->url()
-                            ->startsWith('https://www.google.com/maps/place/')
-                            ->afterStateUpdated(function (Forms\Set $set, $state) {
-                                $current = explode('/', $state);
-                                $arr = explode(',', $current[6]);
-                                $long = explode('@',$arr[0])[1];
-                                $lat = $arr[1];
-                                $set('longitude', $long);
-                                $set('latitude', $lat);
-                            })
-                            ->hint('Url must be https://www.google.com/maps/place/...')
-                            ->live(onBlur: true),
-                        Forms\Components\TextInput::make('longitude')
-                            ->numeric()
-                            ->required(),
-                        Forms\Components\TextInput::make('latitude')
-                            ->numeric()
-                            ->required(),
+                        ->label('District Name')
+                        ->maxLength(25)
+                        ->required(),
                     ]),
+                    Forms\Components\Tabs\Tab::make('Offices')
+                    ->schema([
+                        Forms\Components\Repeater::make('')
+                            ->columnSpanFull()
+                            ->relationship('offices')
+                            // ->maxItems(1)
+                            ->defaultItems(0)
+                            ->schema([
+                                Forms\Components\TextInput::make('name')
+                                        ->label('Office Name')
+                                        ->maxLength(25)
+                                        ->required(),
+                                Forms\Components\Select::make('is_district')
+                                        ->label('Office Of')
+                                        ->default(true)
+                                        ->options([true => 'District', false => 'Village'])
+                                        ->required(),
+                                Forms\Components\FileUpload::make('image')
+                                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                                        ->directory('offices')
+                                        ->enableOpen()
+                                        ->imageResizeMode('cover')
+                                        ->imageResizeTargetWidth('1920')
+                                        ->imageResizeTargetHeight('1080')
+                                        ->imageEditor()
+                                        ->required(),
+                                Forms\Components\TextInput::make('map_url')
+                                    ->url()
+                                    ->startsWith('https://www.google.com/maps/place/')
+                                    ->afterStateUpdated(function (Forms\Set $set, $state) {
+                                        $current = explode('/', $state);
+                                        $arr = explode(',', $current[6]);
+                                        $long = explode('@',$arr[0])[1];
+                                        $lat = $arr[1];
+                                        $set('longitude', $long);
+                                        $set('latitude', $lat);
+                                    })
+                                    ->hint('Url must be https://www.google.com/maps/place/...')
+                                    ->live(onBlur: true),
+                                Forms\Components\TextInput::make('longitude')
+                                    ->numeric()
+                                    ->required(),
+                                Forms\Components\TextInput::make('latitude')
+                                    ->numeric()
+                                    ->required(),
+                            ]),
+                    ])
+
+                ])
             ]);
     }
 
