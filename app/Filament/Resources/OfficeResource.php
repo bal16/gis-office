@@ -50,7 +50,12 @@ class OfficeResource extends Resource
                                 ->imageResizeTargetWidth('1920')
                                 ->imageResizeTargetHeight('1080')
                                 ->imageEditor()
-                                ->required(),
+                                ->required()
+                                ->after(function(Office $record){
+                                    // if($record->isDirty('image')) {
+                                    //     static::handleDeleteImage($record->getOriginal('image'));
+                                    // }
+                                }),
                     ]),
                 Forms\Components\Section::make('Location*')
                     ->schema([
